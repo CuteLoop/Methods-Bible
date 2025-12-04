@@ -1,431 +1,406 @@
-Gotcha — you want the **Next Steps / Ideas** section to only keep items 1, 3, and 4 from before (mapping table, Makefile, CI), and drop the “numerical methods” one.
 
-Here’s the updated `README.md` with:
+# Methods Bible – Methods in Applied Mathematics
 
-* Everything from before,
-* The **How to Contribute** section,
-* A cleaned-up **Next Steps / Ideas** with only steps 1, 3, and 4.
+This repo is a personal **Methods in Applied Mathematics** textbook + solved‐problems notebook.
 
-You can overwrite your current README with this:
+It is organized in **two main ways**:
 
-````markdown
-# Methods in Applied Mathematics — LaTeX Book Skeleton
+1. **By topic** – core themes (complex analysis, Fourier analysis, ODEs, PDEs).
+2. **By exam** – solved problems organized by exam and problem number.
 
-This repository contains a **LaTeX book skeleton** for your graduate *Methods in Applied Mathematics* notes.
+There is also a small automation layer to:
+- scaffold the LaTeX project (`init_methods_book.py`), and  
+- generate topic content via a 3-phase OpenAI workflow (`prompts_for_sections.py`).
 
-It is designed to be:
-
-- A **classical textbook** (by topic: complex analysis, Fourier analysis, ODEs, PDEs).
-- A **problem notebook** (eventually organized by exam and by theme).
-- Easy to extend with your own problems, solutions, and figures.
-
-The structure is initialized and maintained by a small Python script:
-`init_methods_book.py`.
+> **Note:** The workflow is designed and tested with a **Linux** environment in mind
+> (e.g. Ubuntu). Other platforms can work, but commands may need adaptation
+> (especially package installation).
 
 ---
 
-## Features
+## 1. Repository layout
 
-- ✅ `book`-class LaTeX template with:
-  - Theorems, definitions, problems, exercises, solutions.
-  - Reasonable typography and geometry.
-- ✅ Topics aligned with your methods sequence:
-  - Complex Analysis (2.1–2.4).
-  - Fourier Analysis (3.1–3.10).
-  - ODEs (4.1–4.6).
-  - PDEs (5.1–5.7).
-- ✅ Themed chapter files under `themes/`.
-- ✅ Future support for:
-  - `exams/` — chapters organized by exam.
-  - `problems/` — canonical problem files that can be reused in multiple places.
-- ✅ Optional use of the **OpenAI API** to auto-generate mock LaTeX intros and example problems.
-
----
-
-## Repository Structure
-
-After running the init script, you get something like:
+After running the initializer, the directory tree looks like:
 
 ```text
 methods-book/
-├─ main.tex               # Main LaTeX book file (includes all themed chapters)
-├─ init_methods_book.py   # Script that generates this skeleton
-├─ figures/               # Put shared figures here
-├─ themes/                # Chapters organized by topic
-│   ├─ complex_analysis.tex
-│   ├─ fourier_analysis.tex
-│   ├─ ode.tex
-│   └─ pde.tex
-├─ problems/              # (For later) canonical problem files
-│   └─ exams/
-│       └─ ...            # e.g. exam1/ex1_prob01.tex
-└─ exams/                 # (For later) chapters organized by exam
-    └─ ...                # e.g. exam1.tex, exam2.tex
+  main.tex
+  Makefile
+  figures/
+
+  themes/
+    complex_analysis.tex
+    fourier_analysis.tex
+    ode.tex
+    pde.tex
+
+  problems/
+    exams/
+      exam1/
+        ex1_prob01.tex
+
+  exams/
+    exam1.tex
+
+  .github/
+    workflows/
+      latex.yml
 ````
 
-### Topic Coverage
+* `main.tex` – master LaTeX file; includes all thematic chapters and exams.
+* `themes/*.tex` – chapters by **theme**:
 
-The themed chapters are pre-configured to match:
-
-* **Complex Analysis**
-
-  * 2.1 Complex Variables and Complex-valued Functions
-  * 2.2 Analytic Functions and Integration along Contours
-  * 2.3 Residue Calculus
-  * 2.4 Extreme-, Stationary- and Saddle-Point Methods (*)
-
-* **Fourier Analysis**
-
-  * 3.1 The Fourier Transform and Inverse Fourier Transform
-  * 3.2 Properties of the 1-D Fourier Transform
-  * 3.3 Dirac’s delta-function
-  * 3.4 Closed form representation for select Fourier Transforms
-  * 3.5 Fourier Series: Introduction
-  * 3.6 Properties of the Fourier Series
-  * 3.7 Riemann–Lebesgue Lemma
-  * 3.8 Gibbs Phenomenon
-  * 3.9 Laplace Transform
-  * 3.10 From Differential to Algebraic Equations with FT, FS and LT
-
-* **Ordinary Differential Equations**
-
-  * 4.1 ODEs: Simple cases
-  * 4.2 Direct Methods for Solving Linear ODEs
-  * 4.3 Linear Dynamics via the Green Function
-  * 4.4 Linear Static Problems
-  * 4.5 Sturm–Liouville (spectral) theory
-  * 4.6 Phase Space Dynamics for Conservative and Perturbed Systems
-
-* **Partial Differential Equations**
-
-  * 5.1 First-Order PDE: Method of Characteristics
-  * 5.2 Classification of linear second-order PDEs
-  * 5.3 Elliptic PDEs: Method of Green Function
-  * 5.4 Waves in a Homogeneous Media: Hyperbolic PDE (*)
-  * 5.5 Diffusion Equation
-  * 5.6 Boundary Value Problems: Fourier Method
-  * 5.7 Case study: Burgers’ Equation (*)
-
-Each of these appears as a `\section{...}` in the corresponding `themes/*.tex` file.
+  * `complex_analysis.tex`
+  * `fourier_analysis.tex`
+  * `ode.tex`
+  * `pde.tex`
+* `exams/*.tex` – chapters by **exam** (e.g. `exam1.tex`).
+* `problems/exams/examN/*.tex` – individual problems + solutions per exam.
+* `Makefile` – build helper (`make` → `main.pdf`).
+* `.github/workflows/latex.yml` – GitHub Actions workflow to build the PDF on push.
 
 ---
 
-## Requirements
+## 2. Requirements
 
-* **Python 3.8+**
-* **LaTeX** distribution (TeX Live, MiKTeX, etc.) with:
+### 2.1 System (Linux recommended)
 
-  * `amsmath`, `amssymb`, `amsthm`, `mathtools`
-  * `geometry`, `microtype`, `graphicx`, `hyperref`, `enumitem`
-* Optional (for auto-generated mock content):
-
-  * [`openai`](https://pypi.org/project/openai/) Python package
-  * `OPENAI_API_KEY` environment variable set
-
-Install the Python dependency (optional):
+On **Ubuntu/Debian**–like systems:
 
 ```bash
-pip install openai
+  sudo apt-get update
+  sudo apt-get install -y \
+    python3 python3-venv python3-pip \
+    make \
+    texlive-latex-recommended \
+    texlive-latex-extra \
+    texlive-fonts-recommended
+
 ```
 
+You need:
+
+* Python ≥ 3.9
+* `make`
+* A LaTeX distribution with standard packages
+
+### 2.2 Python packages
+
+Python dependencies are listed in `requirements.txt` (at minimum it should contain `openai`):
+
+
+You can add more tools later (e.g. `black`, `isort`, etc.).
+
 ---
 
-## Getting Started
+## 3. Bootstrapping the project
 
-1. **Clone or create the repo**
+The idea:
+
+1. Clone repo
+2. Create & activate a virtual environment
+3. Install Python dependencies
+4. Initialize the LaTeX project structure
+5. Build the PDF
+
+### 3.1 Clone and set up `venv`
+
+From your terminal:
 
 ```bash
-git clone <this-repo-url> methods-book
+# 1) Clone the repo
+git clone https://github.com/your-user/Methods-Bible.git
+cd Methods-Bible
+
+# 2) Create a virtual environment
+python3 -m venv venv
+
+# 3) Activate the virtual environment
+source venv/bin/activate
+# (Your prompt should now show (venv) ...)
+
+# 4) Install Python dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+> If you’re on a non-Linux system, the `source venv/bin/activate` command may need
+> to be adapted (e.g. `venv\Scripts\activate` on Windows PowerShell).
+
+### 3.2 Initialize the LaTeX project
+
+With the virtual environment active and from the repo root:
+
+```bash
+# Simple skeleton (stubs in themes/*.tex)
+python3 init_methods_book.py --root methods-book
+```
+
+Or, to **auto-populate** all themed chapters using OpenAI:
+
+```bash
+export OPENAI_API_KEY="your-key-here"
+
+python3 init_methods_book.py --root methods-book --with-openai
+```
+
+This will create `methods-book/` with:
+
+* `main.tex`
+* `themes/*.tex` (either stubs with TODOs or OpenAI-generated examples)
+* `figures/`
+* `problems/exams/exam1/ex1_prob01.tex`
+* `exams/exam1.tex`
+* `Makefile`
+* `.github/workflows/latex.yml`
+
+### 3.3 Build the PDF (locally)
+
+```bash
 cd methods-book
-```
-
-2. **Run the initialization script**
-
-Basic usage (just creates empty stubs):
-
-```bash
-python init_methods_book.py --root .
-```
-
-With OpenAI-generated mock content for each chapter:
-
-```bash
-export OPENAI_API_KEY="your_api_key_here"
-python init_methods_book.py --root . --with-openai
-```
-
-This will:
-
-* Create folders `figures/`, `themes/`, `problems/exams/`, and `exams/` if missing.
-* Create `main.tex` if missing.
-* Create `themes/*.tex` with either:
-
-  * Simple stubs (chapter + empty sections), or
-  * Mock content (short introductions + one example problem/solution per section) if `--with-openai` is used.
-
-3. **Build the PDF**
-
-From the root of the project:
-
-```bash
-pdflatex main.tex
-bibtex main    # if you later add a bibliography
+make
+# or, if you prefer:
 pdflatex main.tex
 pdflatex main.tex
 ```
 
-You should get `main.pdf` as your compiled book.
+The output is `methods-book/main.pdf`.
 
 ---
 
-## How to Use This for Your Methods Exam Notes
+## 4. How the LaTeX is organized
 
-### 1. By Topic (Thematic View)
+### 4.1 By theme (`themes/`)
 
-Edit the files under `themes/`:
+Each themed chapter is a standalone `\chapter{...}` file, included from `main.tex`:
 
-* Add definitions, theorems, and proofs.
-* For worked examples, use the provided environments:
+```tex
+% Part I: Applied Analysis
+\part{Applied Analysis}
 
-```latex
-\begin{problem}[Heat equation with Dirichlet BCs]
-...
+\include{themes/complex_analysis}
+\include{themes/fourier_analysis}
+
+% Part II: Differential Equations
+\part{Differential Equations}
+
+\include{themes/ode}
+\include{themes/pde}
+```
+
+When initialized **without** OpenAI, each section has a stub like:
+
+```tex
+\section{Phase Space Dynamics for Conservative and Perturbed Systems}
+% TODO (Madeline + Joel): invent an OpenAI prompt for this topic,
+% generate rough examples, and then write the curated theory,
+% problems, and solutions here.
+```
+
+Later, these stubs are replaced by content generated via the 3-phase workflow.
+
+### 4.2 By exam (`exams/` and `problems/exams/`)
+
+Exams live in `exams/examN.tex` and include per‐problem files from `problems/exams/examN/`. For example:
+
+```tex
+% exams/exam1.tex
+\chapter{Exam 1 – Sample Problems}
+
+\section*{Original Exam Statement}
+% TODO: paste or summarize the original exam statement here.
+
+\section{Solved Problems}
+\input{problems/exams/exam1/ex1_prob01}
+```
+
+Each problem file typically contains:
+
+```tex
+\begin{problem}[Exam 1, Problem 1: Warm-up ODE]\label{prob:ex1-1-warmup-ode}
+Solve the initial value problem
+\[
+  y'(t) = -2 y(t), \qquad y(0) = 1.
+\]
 \end{problem}
 
 \begin{solution}
-...
+... full solution ...
 \end{solution}
 ```
 
-These live at the **conceptual** level: e.g. “Residue Calculus” examples that illustrate the method, not necessarily tied to a specific exam.
+`main.tex` includes exams as a separate part:
 
-### 2. By Exam (Problem View)
-
-Later, you can:
-
-* Create `exams/exam1.tex`, `exams/exam2.tex`, … to hold **full exams with solutions**.
-* For each exam problem, create a canonical file in `problems/exams/...`, for example:
-
-```text
-problems/
-  exams/
-    exam1/
-      ex1_prob01.tex
-      ex1_prob02.tex
-    exam2/
-      ex2_prob01.tex
-      ...
+```tex
+\part{Exams and Problem Collections}
+\include{exams/exam1}
+% TODO: add \include{exams/exam2}, etc.
 ```
 
-Each `ex1_prob01.tex` file contains:
+---
 
-```latex
-\begin{problem}[Exam 1, Problem 1: Title]
+## 5. GitHub Actions: automatic LaTeX build
+
+The workflow `.github/workflows/latex.yml` builds `main.pdf` on GitHub for every push/PR to `main` or `master`.
+
+No extra configuration is required:
+
+1. Push your changes:
+
+   ```bash
+   git add .
+   git commit -m "Update methods content"
+   git push
+   ```
+
+2. GitHub will:
+
+   * Install TeX Live on an Ubuntu runner.
+   * Run `pdflatex main.tex` twice.
+   * Upload `main.pdf` as an artifact named `methods-book-pdf`.
+
+Download the PDF from the **Actions** tab.
+
+---
+
+## 6. Generating new topic content (3-phase workflow)
+
+To systematically populate each topic/section, use:
+
+* `prompts_for_sections.py` (at repo root, next to `init_methods_book.py`).
+
+This script implements a **three-phase workflow**:
+
+1. **PLAN** (section-level)
+2. **INQUIRY** (example-level, guided, inquiry-based)
+3. **SOLUTION** (example-level, full exposition)
+
+### 6.1 Setup (once)
+
+Inside your activated `venv`:
+
+```bash
+pip install -r requirements.txt
+export OPENAI_API_KEY="your-key"
+```
+
+### 6.2 Phase 1 – Plan the section
+
+Pick a section/topic, e.g.:
+
+> Phase Space Dynamics for Conservative and Perturbed Systems
+
+Run:
+
+```bash
+python3 prompts_for_sections.py plan \
+  --section "Phase Space Dynamics for Conservative and Perturbed Systems" \
+  --run
+```
+
+You get:
+
+* A narrative description of the section.
+* A list of 3–7 example ideas with techniques and difficulty levels.
+* A proposed ordering (learning narrative).
+
+Paste this into comments or a planning file.
+
+### 6.3 Phase 2 – Inquiry-based version of a chosen example
+
+Choose one of the example ideas, e.g.:
+
+> "Damped harmonic oscillator with small nonlinear perturbation"
+
+Run:
+
+```bash
+python3 prompts_for_sections.py inquiry \
+  --section "Phase Space Dynamics for Conservative and Perturbed Systems" \
+  --example "Damped harmonic oscillator with small nonlinear perturbation" \
+  --run
+```
+
+This produces a LaTeX snippet like:
+
+```tex
+\begin{problem}[Descriptive title]
+% Motivational paragraph
+
+(a) First exploratory question ...
+% Hint: ...
+
+(b) Next guided question ...
+% Hint: ...
+
 ...
+
+(e) Extension / "what if" question.
 \end{problem}
-\begin{solution}
-...
-\end{solution}
 ```
 
-Then:
+Paste this into the corresponding `\section{...}` in `themes/ode.tex`
+(or another themed chapter).
 
-* In `exams/exam1.tex` you `\input{problems/exams/exam1/ex1_prob01}` in exam order.
-* In `themes/*` chapters you can reuse the same problem files, re-`input` them under the relevant section (e.g. “Diffusion Equation”, “Residue Calculus”, etc.).
+### 6.4 Phase 3 – Full solution/exposition for the same example
 
-This gives you **two views** over the same problem bank:
+For the same example description:
 
-* “What was on Exam 2?”
-* “Show me all problems using Green functions.”
+```bash
+python3 prompts_for_sections.py solution \
+  --section "Phase Space Dynamics for Conservative and Perturbed Systems" \
+  --example "Damped harmonic oscillator with small nonlinear perturbation" \
+  --run
+```
 
----
+You get:
 
-## How to Contribute
-
-Contributions are welcome — from fixing a typo in a solution to adding whole new chapters.
-Because this repo mixes **LaTeX** and **Python**, here’s a lightweight workflow to keep things tidy.
-
-### 1. General Workflow
-
-1. **Fork** the repository or create a new branch:
-
-   ```bash
-   git checkout -b feature/my-new-topic
-   ```
-2. Make your changes (LaTeX and/or Python).
-3. Compile `main.tex` to ensure it still builds:
-
-   ```bash
-   pdflatex main.tex
-   pdflatex main.tex   # twice for references
-   ```
-4. Commit with a clear message:
-
-   ```bash
-   git commit -am "Add example on residue calculus"
-   ```
-5. Open a **pull request** with:
-
-   * A short summary of the change.
-   * Any notes on new commands, environments, or structure decisions.
-
----
-
-### 2. Adding Problems and Solutions
-
-There are two main places where problems live:
-
-* **Thematic view**: under `themes/` (conceptual examples).
-* **Exam view** (canonical source, preferred): under `problems/exams/` and reused elsewhere.
-
-#### A. New problem tied to an exam
-
-1. Create a file like:
-
-   ```text
-   problems/exams/exam1/ex1_prob03.tex
-   ```
-2. Use this structure:
-
-   ```latex
-   \begin{problem}[Exam 1, Problem 3: Short descriptive title]\label{prob:ex1-3-short-title}
-   % Problem statement here.
-   \end{problem}
-
-   \begin{solution}
-   % Full solution, with all steps and commentary as needed.
-   \end{solution}
-   ```
-3. Include it in:
-
-   * The exam chapter (e.g. `exams/exam1.tex`) via `\input{problems/exams/exam1/ex1_prob03}`.
-   * One or more themed chapters (e.g. `themes/pde.tex`) in the relevant section.
-
-**Naming convention:**
-
-* `examN` folder for exam N.
-* `exN_probMM.tex` for problem MM of exam N (`MM` two digits if you like consistency).
-
-#### B. New example in a themed chapter
-
-If the problem is **not** tied to a specific exam, you can add it directly in a `themes/*.tex` file:
-
-```latex
-\begin{problem}[Residue theorem example]
-...
+```tex
+\begin{problem}[Descriptive title]
+  ... concise, self-contained statement ...
 \end{problem}
+
 \begin{solution}
-...
+  ... full, Chicago-style exposition:
+  complete sentences, clear reasoning,
+  minimal unnecessary symbols, connections to the section theme ...
 \end{solution}
 ```
 
-Later, if it becomes exam-worthy, you can refactor it into `problems/exams/...` and `\input` it instead.
+You can either:
 
----
+* Place this directly under the inquiry-based version, or
+* Store it as an exam-style problem under `problems/exams/...`.
 
-### 3. Editing Themed Chapters
+### 6.5 Rebuild
 
-Each file in `themes/` corresponds to a big topic (complex analysis, Fourier analysis, ODE, PDE).
-
-When editing:
-
-* Keep **section headings** aligned with the course outline (2.1, 2.2, etc.).
-* Use the existing environments:
-
-  * `theorem`, `lemma`, `proposition`, `corollary`
-  * `definition`, `example`, `remark`
-  * `problem`, `solution`
-* Prefer **clear narrative + full derivation** over very compressed “cheat-sheet” style.
-* If adding new macros or packages, consider whether they belong:
-
-  * in `main.tex` (global use), or
-  * locally inside a `\begingroup` / `\endgroup` block.
-
----
-
-### 4. Working with the Init Script
-
-If you modify `init_methods_book.py`:
-
-* Keep it **idempotent**:
-
-  * It should not overwrite existing files unless that is explicitly the goal.
-* Document new options in the **README** if you add flags or change the structure.
-* Try to keep topic configuration (chapter titles, section titles) in the `THEME_SPECS` area.
-
-When adding new themes:
-
-1. Extend `THEME_SPECS` with a new entry.
-2. Re-run:
-
-   ```bash
-   python init_methods_book.py --root .   # or with --with-openai
-   ```
-
----
-
-### 5. Coding Style (Python)
-
-* Use **PEP 8-ish** style: snake_case for functions, clear variable names.
-* Keep imports standard: `from pathlib import Path`, `from textwrap import dedent`, etc.
-* Include a short **docstring** at the top of new scripts/functions describing what they do.
-* Avoid hardcoding paths; always work relative to `--root` or the current working directory.
-
----
-
-### 6. Good PR / Change Examples
-
-Great contributions include:
-
-* Adding a clear, fully worked example for:
-
-  * Residue calculus,
-  * Gibbs phenomenon,
-  * Sturm–Liouville problems,
-  * Method of characteristics, etc.
-* Refactoring an existing handwritten solution into:
-
-  * A `problems/exams/...` file plus:
-  * A thematic inclusion in `themes/`.
-* Improving exposition (more intuitive explanations) without breaking the math.
-* Adding small utility scripts (e.g. Makefile, `build.sh`) that make compilation easier.
-
-If you’re unsure whether something fits, open an issue or a draft PR with a short explanation:
-“Here’s a new example for the diffusion equation; thoughts on style/placement?”
-
-This is a learning + methods playground — contributions that make it more readable, more inquiry-based, or more fun are very welcome.
-
----
-
-## Next Steps / Ideas
-
-1. **Add a mapping table (topics ↔ exam problems).**
-
-   * In the back matter, create a table or appendix that lists each section (e.g. “3.4 Closed-form Fourier transforms”) alongside the exam problems that use that technique.
-   * This turns the book into a revision map: “I want to practice residues → here are all related problems across exams.”
-
-2. **Add a `Makefile` or build script.**
-
-   * For example, a simple `Makefile` with targets like:
-
-     * `make pdf` → build `main.pdf`
-     * `make clean` → remove aux/log files
-   * Or a `build.sh` script that runs `latexmk` or a minimal `pdflatex` sequence.
-
-3. **Add CI (GitHub Actions) to auto-build the PDF.**
-
-   * Set up a GitHub Actions workflow that:
-
-     * Installs TeX Live (minimal).
-     * Runs `pdflatex` (or `latexmk`) on `main.tex`.
-     * Optionally uploads `main.pdf` as a build artifact or publishes it to GitHub Pages.
-   * This ensures that every PR keeps the LaTeX build healthy.
-
----
-
-Happy methods-ing ✨
-This skeleton is meant to get out of your way so you can focus on doing analysis, Fourier sorcery, and PDE magic.
-
+```bash
+cd methods-book
+make
 ```
-::contentReference[oaicite:0]{index=0}
-```
+
+Review `main.pdf` to see your new content integrated.
+
+---
+
+## 7. How to contribute (for future you / collaborators)
+
+* Prefer editing **content files**:
+
+  * `themes/*.tex` for topic-based narrative + examples.
+  * `exams/*.tex` and `problems/exams/*` for exam-style problems.
+* Keep `main.tex` structure stable unless you are reorganizing the book.
+* Workflow for adding material:
+
+  1. Update or add a `\section{...}` in a `themes/*.tex` file.
+  2. Use `prompts_for_sections.py` to build:
+
+     * a plan,
+     * an inquiry-based problem,
+     * and a full solution.
+  3. If the problem relates to a specific exam, also add it under `problems/exams/examN/` and include it from `exams/examN.tex`.
+  4. Run `make` to confirm the LaTeX builds cleanly.
+  5. Commit and push; GitHub Actions will build `main.pdf` for you.
+
+This way, the **Methods Bible** grows in a structured, inquiry-based, and exam-aware way, while staying friendly to Linux + venv workflows. 🧠📚
+
