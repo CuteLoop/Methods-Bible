@@ -1,8 +1,4 @@
-Nice, the beast compiles and now we get to *feed it more problems* 😈
 
-Here’s a fresh README you can drop in `Methods-Bible/README.md`, plus a concrete workflow for “how do I add solved problems from past exams?” using the structure you already have.
-
----
 
 ````markdown
 # Methods Bible 📖
