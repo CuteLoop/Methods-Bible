@@ -1,0 +1,56 @@
+{
+  "section_title": "ODEs: Simple Cases",
+  "narrative": "In this section we study the simplest ordinary differential equations and the basic techniques for solving them. These include separable equations and linear equations with constant coefficients, both in first and second order. Although these examples may look elementary, they already capture important phenomena such as decay to equilibrium, approach to a carrying capacity, and oscillations with and without damping. The goal is to learn how to translate a verbal description of a process into an equation, and then how to analyze and solve that equation systematically.\n\nSimple ODEs lie at the foundation of applied mathematics. Many partial differential equations, when restricted to special classes of solutions such as steady states or traveling waves, reduce to ODEs of exactly the types considered here. Linear ODEs with constant coefficients are also the natural setting in which exponential and trigonometric functions emerge as building blocks, which later reappear in Fourier series, Laplace transforms, and the complex-analytic study of differential equations. The qualitative ideas we develop\u2014for example, stability of equilibria and long-time behavior\u2014are the first steps toward the modern theory of dynamical systems, which underpins much of mathematical modeling in physics, biology, and engineering.\n\nAs you work through the examples, focus on recognizing the structure of an equation (separable, linear, autonomous) and choosing an appropriate method. These pattern-recognition skills are what allow you to tackle more complicated models later on, whether they arise as reduced forms of PDEs, as linearizations of nonlinear systems, or as test problems for numerical methods.",
+  "examples": [
+    {
+      "title": "Exponential Decay and Half-Life",
+      "summary": "A quantity, such as the mass of a radioactive isotope or the concentration of a drug in the bloodstream, decreases at a rate proportional to its current amount. This leads to an equation where the derivative of the unknown function is proportional to the function itself. By solving this equation, one can relate the decay constant to the experimentally observed half-life and predict how long it takes for the quantity to fall below a desired threshold.",
+      "teaches": "This example illustrates how to recognize and solve a first-order linear ODE with constant coefficients, and how to interpret the solution in terms of exponential decay and half-life. It also introduces the idea of fitting model parameters from physical data.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Falling Body with Linear Air Resistance",
+      "summary": "Consider an object dropped from rest and falling under gravity while experiencing a drag force proportional to its velocity. The motion is governed by a first-order ODE for the velocity as a function of time, balancing gravitational and resistive forces. Solving this ODE reveals how the velocity approaches a terminal speed and how the position evolves in time.",
+      "teaches": "This example uses a separable first-order ODE to model a physical process and demonstrates how equilibrium (terminal velocity) emerges naturally from the equation. It also provides practice in interpreting solutions graphically and in the limit of large time.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Logistic Population Growth",
+      "summary": "A population grows quickly when it is small, but the growth rate slows as resources become scarce and the population approaches a carrying capacity. This leads to the logistic equation, a nonlinear first-order ODE in which the growth rate is proportional both to the current population and to the remaining capacity. The solution describes how the population approaches its limiting size over time.",
+      "teaches": "This example introduces a nonlinear separable ODE and shows how to find explicit solutions and equilibria. It also highlights the concept of stability of equilibria, which is central in dynamical systems and in the analysis of more complex models and PDE reductions.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Mixing in a Well-Stirred Tank",
+      "summary": "A tank contains a liquid with some dissolved substance, and a solution with a different concentration flows in while the mixture flows out at the same rate. Assuming the tank is perfectly mixed, the concentration of the substance in the tank changes over time according to a first-order linear ODE. Solving this equation allows one to determine how the concentration approaches a steady state and how long it takes to reach a specified purity.",
+      "teaches": "This example practices the method of solving first-order linear ODEs using an integrating factor and interpreting steady-state and transient behavior. It also emphasizes translating a word problem into a differential equation and checking units and physical consistency.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Simple Harmonic Oscillator",
+      "summary": "A mass attached to a spring on a frictionless surface moves back and forth when displaced from its equilibrium position. Newton\u2019s second law, combined with Hooke\u2019s law, leads to a second-order linear ODE with constant coefficients for the displacement as a function of time. The solutions are sinusoidal functions whose amplitude and frequency are determined by the initial conditions and system parameters.",
+      "teaches": "This example introduces second-order linear homogeneous ODEs with constant coefficients and their characteristic equations, connecting naturally to exponential and trigonometric functions. It lays the groundwork for understanding oscillations, resonance, and later Fourier and complex-analysis methods for more general linear systems.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+% problems/exams/exam1/ex1_prob01.tex
+\begin{problem}[Exam 1, Problem 1: Warm-up ODE]\label{prob:ex1-1-warmup-ode}
+Solve the initial value problem
+\[
+  y'(t) = -2 y(t), \qquad y(0) = 1.
+\]
+\end{problem}
+
+\begin{solution}
+This is a linear first-order ODE with constant coefficients.
+We can solve by inspection or separation of variables.
+
+Separating variables,
+\[
+  \frac{y'}{y} = -2
+\]
+and integrating gives
+\[
+  \ln|y(t)| = -2t + C.
+\]
+Exponentiating,
+\[
+  y(t) = C_1 e^{-2t}.
+\]
+Imposing the initial condition $y(0)=1$ yields $C_1 = 1$, so
+\[
+  y(t) = e^{-2t}.
+\]
+\end{solution}

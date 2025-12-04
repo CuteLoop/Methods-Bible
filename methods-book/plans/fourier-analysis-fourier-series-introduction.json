@@ -1,0 +1,57 @@
+{
+  "section_title": "Fourier Series: Introduction",
+  "narrative": "In this section we begin the study of Fourier series, which represent periodic functions as infinite sums of sines and cosines. This idea allows us to replace a complicated function by a combination of very simple building blocks, each with a clear geometric and physical interpretation. We will learn how to compute these expansions, how to interpret their coefficients, and how to reason carefully about convergence.\n\nFourier series are foundational in applied mathematics because many partial differential equations, such as the heat equation, the wave equation, and Laplace\u2019s equation, can be solved by expanding solutions into trigonometric series. In dynamical systems and signal processing, Fourier series let us decompose motion or data into constituent frequencies, clarifying oscillatory behavior and resonances. The tools we develop here connect directly to orthogonality in linear algebra, to complex exponentials and residues in complex analysis, and to the more general Fourier transform that appears in continuum models and infinite-domain PDEs.",
+  "examples": [
+    {
+      "title": "Vibrating String with Fixed Endpoints",
+      "summary": "Consider a taut string of length L that is fixed at both ends and plucked into some initial shape. Physically, the motion of the string is governed by the one-dimensional wave equation, and experimentally one observes a superposition of standing waves at different frequencies. The initial displacement can be modeled as an arbitrary function on the interval from 0 to L that vanishes at the endpoints.",
+      "teaches": "This example motivates representing an arbitrary shape as a sum of sine functions that satisfy fixed-end boundary conditions, and leads naturally to sine-series expansions via orthogonality. It also illustrates how Fourier series encode physical modes of vibration and how coefficients measure the energy in each mode.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Cooling of a Rod with Prescribed End Temperatures",
+      "summary": "Imagine a thin metal rod of length L whose ends are held at zero temperature while the interior starts with a nonuniform temperature distribution. The evolution of temperature along the rod is described by the heat equation with homogeneous Dirichlet boundary conditions. The initial temperature profile is an arbitrary function that vanishes at the endpoints.",
+      "teaches": "This example introduces Fourier sine series as a tool for separating variables in the heat equation and connecting spatial eigenfunctions with temporal decay rates. It emphasizes how Fourier coefficients are determined by the initial condition and how the solution is built mode by mode.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Fourier Series of a Square Wave Signal",
+      "summary": "Consider a periodic signal that alternates between two constant levels, like an idealized on\u2013off electric signal or a clock pulse in digital electronics. As a function of time, this produces a square wave that is discontinuous at the switching times. Engineers model such signals by decomposing them into sinusoidal components at various harmonics.",
+      "teaches": "This example demonstrates how to compute the Fourier series of a piecewise constant function and introduces the phenomenon of Gibbs overshoot near discontinuities. It highlights how Fourier series approximate functions with jumps and how convergence behaves at different types of points.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Even and Odd Extensions: Half-Range Expansions",
+      "summary": "Suppose a temperature or displacement profile is given only on a half-interval, such as from 0 to L, with a boundary condition at x = 0 that does not match the usual sine or cosine endpoints. Physically, one might interpret the missing half as a mirror reflection or an antisymmetric continuation across a wall. Mathematically, we would like to use Fourier methods on [\u2212L, L] while starting from data specified only on [0, L].",
+      "teaches": "This example develops the technique of even and odd extensions to construct cosine and sine series (half-range expansions) from data on a half-interval. It emphasizes how symmetry choices encode boundary conditions and how to decide between sine and cosine bases in applications.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "From Trigonometric Series to Complex Exponential Form",
+      "summary": "Given a real-valued periodic function, its Fourier series can be written either in terms of sines and cosines or as a sum of complex exponentials e^{inx}. The two forms look different but encode the same information, and each has advantages in different contexts. This change of viewpoint is especially useful when connecting Fourier series to linear algebra and complex analysis.",
+      "teaches": "This example introduces the complex form of Fourier series and the relation between real coefficients and complex coefficients. It prepares the ground for using tools from complex analysis and for seeing Fourier series as expansions in an orthonormal basis of the complex inner product space L^2([\u2212\u03c0, \u03c0]).",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    }
+  ]
+}

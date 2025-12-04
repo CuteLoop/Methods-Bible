@@ -1,0 +1,66 @@
+{
+  "section_title": "Phase Space Dynamics for Conservative and Perturbed Systems",
+  "narrative": "This section develops the phase space viewpoint for ordinary differential equations, with special attention to conservative systems and what happens when we introduce small perturbations such as damping, forcing, or noise. Instead of focusing only on explicit formulas for solutions, we learn to visualize trajectories in the plane or higher-dimensional phase space, identify invariant sets and conserved quantities, and understand qualitative features such as equilibria, periodic orbits, and separatrices. Conservative systems, which preserve an energy-like quantity, provide a clean starting point where orbits lie on level sets, while perturbed systems show how these structures deform, break, or give rise to more complex behavior.\n\nThis perspective is central in applied mathematics, dynamical systems, and the study of partial differential equations viewed as infinite-dimensional dynamical systems. Many PDEs have conserved energies and can be approximated by finite-dimensional conservative systems that capture essential behavior, while perturbations model dissipation, driving, or external influences. The ideas here connect to Hamiltonian mechanics from classical physics, to complex analysis through analytic continuation of vector fields and normal forms, and to Fourier analysis via modal decompositions that turn PDEs into coupled ODEs in phase space. By learning to read phase portraits and track how they change under perturbations, you gain a durable toolkit for understanding models far beyond those that can be solved in closed form.",
+  "examples": [
+    {
+      "title": "Simple Harmonic Oscillator in Phase Space",
+      "summary": "We revisit the undamped harmonic oscillator and rewrite it as a first-order system in position and velocity. In phase space, its solutions appear as closed orbits around the origin, corresponding to conservation of mechanical energy. By drawing level curves of the energy, we see that each initial condition lies on a circle and produces periodic motion.",
+      "teaches": "This example introduces phase space, the reduction of a second-order equation to a first-order system, and the use of conserved energy to describe orbits as level sets. It sets up the contrast between conservative and non-conservative behavior in later examples.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Nonlinear Conservative Oscillator and Energy Level Sets",
+      "summary": "We study a mass attached to a nonlinear spring whose restoring force is not proportional to displacement. The equation remains conservative, so there is still an energy function, but the phase portrait no longer consists of perfect circles. Instead, the level sets of the energy can be elongated or distorted, and the period of oscillation can depend on the amplitude.",
+      "teaches": "This example illustrates how to construct an energy function for a one-dimensional conservative system and interpret its level sets as phase space trajectories. It emphasizes how nonlinearity changes the geometry of orbits without destroying conservation.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Introducing Damping: From Closed Orbits to Spirals",
+      "summary": "We add linear damping to the harmonic oscillator and again represent the system in phase space. The former closed orbits now become spirals that wind into a stable equilibrium at the origin, reflecting the loss of energy over time. Different types of damping (underdamped, critically damped, overdamped) produce qualitatively different phase portraits.",
+      "teaches": "This example shows how small dissipative perturbations destroy the closed orbits of a conservative system and create attractors. It teaches classification of linear equilibria via eigenvalues and how trajectories behave near stable nodes and spirals.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Driven, Damped Oscillator and Resonance in Phase Space",
+      "summary": "We consider a mass-spring system with both damping and a time-periodic forcing term. By passing to an extended phase space or by looking at stroboscopic (Poincar\u00e9) maps, we visualize how trajectories approach a steady periodic motion. Near resonance, the amplitude of this periodic orbit can become large, and the transient spirals into it can take many cycles to settle.",
+      "teaches": "This example introduces the idea of phase space for non-autonomous systems and the use of Poincar\u00e9 sections. It connects phase portraits with physical ideas of resonance, steady-state response, and transient dynamics.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Double-Well Potential: Separatrices and Heteroclinic Orbits",
+      "summary": "We analyze a particle moving in a double-well potential, which has two stable equilibria and one unstable equilibrium between them. In phase space, some trajectories remain trapped in one well, while others have enough energy to cross over the barrier. The boundary between these behaviors is formed by separatrices and heteroclinic orbits connecting saddle points.",
+      "teaches": "This example highlights the role of potential energy landscapes, separatrices, and saddle points in organizing phase space. It prepares the ground for understanding metastability, barrier crossing, and similar phenomena in higher-dimensional and PDE models.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Small Perturbations of a Hamiltonian System",
+      "summary": "Starting from a two-dimensional Hamiltonian (conservative) system with closed orbits, we add a small non-conservative perturbation such as weak damping or external forcing. We track how invariant curves in phase space deform, how some periodic orbits persist while others disappear, and how slow drift along energy levels can arise. In simple cases, we use averaging or energy balance arguments to approximate the long-term behavior.",
+      "teaches": "This example illustrates the robustness and fragility of conservative structures under perturbation and introduces perturbative techniques like averaging in a concrete setting. It connects finite-dimensional phase space ideas to the broader theory of near-Hamiltonian dynamics used in applied analysis and PDEs.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

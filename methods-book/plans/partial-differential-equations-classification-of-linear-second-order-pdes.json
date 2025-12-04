@@ -1,0 +1,66 @@
+{
+  "section_title": "Classification of Linear Second-Order PDEs",
+  "narrative": "This section introduces the classical classification of linear second-order partial differential equations into elliptic, parabolic, and hyperbolic types. The classification is based on the quadratic form built from the second-derivative terms, in much the same way that conic sections are classified using the discriminant. Understanding whether a PDE is elliptic, parabolic, or hyperbolic immediately suggests which kinds of boundary or initial data are appropriate, what sorts of solution behavior one should expect, and which analytical or numerical techniques are likely to work.\n\nIn applied mathematics, this classification underlies the modeling and analysis of diffusion processes, steady-state fields, and wave propagation, which appear everywhere in physics, engineering, and quantitative biology. Elliptic equations such as Laplace\u2019s equation are tied to potential theory and harmonic functions, and connect naturally to complex analysis and Fourier series methods. Parabolic equations such as the heat equation are closely related to dynamical systems and semigroup theory, while hyperbolic equations such as the wave equation connect to characteristic curves and ideas from ordinary differential equations. The classification also guides later topics in this course, including separation of variables, transform methods, and energy estimates, by telling us when and why those methods apply.",
+  "examples": [
+    {
+      "title": "A Family of Second-Order PDEs in Two Variables",
+      "summary": "Consider the family of linear second-order PDEs in two variables with constant coefficients, written in the form a u_xx + 2b u_xy + c u_yy + lower-order terms = f(x, y), where a, b, and c are real constants. By varying a, b, and c, we can produce examples that resemble Laplace\u2019s equation, the heat equation in steady coordinates, or the wave equation in disguise. The goal is to examine the underlying quadratic form a \u03be^2 + 2b \u03be\u03b7 + c \u03b7^2 and relate its algebraic type to qualitative features of the corresponding PDE.",
+      "teaches": "This example teaches how to compute the discriminant b^2 \u2212 ac, and how its sign determines whether the PDE is elliptic, parabolic, or hyperbolic. It also builds intuition by connecting simple algebraic manipulations of coefficients to very different physical behaviors of solutions.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Laplace\u2019s Equation and Elliptic Type",
+      "summary": "Laplace\u2019s equation u_xx + u_yy = 0 models steady-state temperature, electrostatic potential, and incompressible fluid flow in two dimensions. In this setting, one prescribes boundary values on a closed curve, and the interior solution is determined in a smooth and stable way. The algebraic form of the equation is relatively simple, yet it leads to rich phenomena such as maximum principles and analytic regularity.",
+      "teaches": "This example illustrates the elliptic case and shows how the condition b^2 \u2212 ac < 0 appears concretely in Laplace\u2019s equation. It emphasizes how elliptic equations are naturally paired with boundary value problems and are related to harmonic and analytic functions, Fourier series on bounded domains, and potential theory.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "The Heat Equation and Parabolic Type",
+      "summary": "The one-dimensional heat equation u_t = k u_xx describes the diffusion of heat along a rod, where time evolution smooths out temperature gradients. Written in the standard second-order form, this equation has a mixed role for the variables: one is time and one is space, and the equation is second order only in space. Nevertheless, its classification as parabolic explains why it behaves like an infinite-dimensional gradient flow, with solutions becoming smoother and approaching equilibrium as time increases.",
+      "teaches": "This example demonstrates how to reinterpret the heat equation as a second-order PDE in the variables (t, x) and identify it as parabolic via its discriminant. It also highlights the natural connection between parabolic equations, initial value problems, semigroups of operators, and Fourier transform or Fourier series methods in time-dependent diffusion.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "The Wave Equation and Hyperbolic Type",
+      "summary": "The one-dimensional wave equation u_tt = c^2 u_xx governs vibrations of strings and sound waves in thin tubes. In contrast to diffusion, wave propagation preserves oscillations and has finite propagation speed, with solution features traveling along straight lines in the (t, x) plane. The second-order derivatives in both time and space interact so that the equation\u2019s discriminant is positive, which is the hallmark of hyperbolic behavior.",
+      "teaches": "This example shows how to recognize the hyperbolic type of the wave equation and to connect that classification to the geometry of characteristic lines. It prepares the ground for using changes of variables to transform hyperbolic PDEs into simpler canonical forms, and for understanding d\u2019Alembert\u2019s formula and related methods from the theory of ordinary differential equations along characteristics.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Change of Variables and Canonical Forms",
+      "summary": "Many second-order PDEs contain mixed derivative terms, such as u_xy, which can obscure their type and make them harder to analyze. By introducing an appropriate linear change of variables, one can diagonalize the associated quadratic form and transform the PDE into a simpler canonical form with no mixed derivatives. This process is directly analogous to rotating coordinates to simplify the equation of a conic section.",
+      "teaches": "This example teaches how to choose new independent variables so that the mixed second-derivative term disappears, allowing a clear identification of elliptic, parabolic, or hyperbolic type. It strengthens the connection between linear algebra, quadratic forms, and PDEs, and sets up later techniques that rely on working in the simplest available coordinate system.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "A Mixed-Type Equation: Tricomi\u2019s Equation",
+      "summary": "Tricomi\u2019s equation y u_xx + u_yy = 0 arises in models of transonic fluid flow, where regions of subsonic and supersonic motion coexist. In this PDE, the coefficient y changes sign across the line y = 0, so the same equation is elliptic for y > 0 and hyperbolic for y < 0. This change of type across a curve in the plane leads to subtle issues in posing well-defined boundary and initial conditions.",
+      "teaches": "This example introduces mixed-type equations and shows how classification can vary from point to point in the domain, depending on the coefficients. It emphasizes the importance of local classification, and illustrates how physical transitions (from subsonic to supersonic flow) manifest mathematically as changes in PDE type.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

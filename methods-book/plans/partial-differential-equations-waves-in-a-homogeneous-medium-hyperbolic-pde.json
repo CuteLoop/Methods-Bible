@@ -1,0 +1,56 @@
+{
+  "section_title": "Waves in a Homogeneous Medium: Hyperbolic PDE",
+  "narrative": "In this section we study wave phenomena in media that are, at least to a first approximation, spatially uniform. The governing equations are hyperbolic partial differential equations, with the one-dimensional wave equation as the central model. We will see how such equations encode the finite speed of propagation of signals, the superposition of traveling waves, and the emergence of characteristic lines along which information is transported.\n\nThis material matters across applied mathematics, from modeling vibrations of strings and membranes, to understanding sound waves, electromagnetic waves, and even certain aspects of fluid flow and elasticity. Hyperbolic equations provide a complementary viewpoint to parabolic diffusion and elliptic equilibrium problems, and learning to solve them builds fluency with separation of variables, Fourier series, and transform methods. Along the way, we will connect to ordinary differential equations through eigenvalue problems, to Fourier analysis through series and integrals representing wave fields, and to more advanced topics such as distributions and complex analysis when we interpret fundamental solutions and apply contour integration to evaluate certain integrals.\n\nOur approach emphasizes starting from simple, concrete boundary-value problems and gradually introducing more sophisticated tools. We will analyze waves on finite and infinite domains, explore how initial and boundary data shape the resulting motion, and use the method of characteristics to understand how disturbances propagate. The goal is not only to learn solution formulas, but also to build an intuitive picture of how hyperbolic PDEs behave and how they fit into the broader framework of dynamical systems and applied analysis.",
+  "examples": [
+    {
+      "title": "Transverse Vibrations of a Stretched String",
+      "summary": "A taut string of finite length is fixed at both ends and displaced from rest into some initial shape, then released. The motion is modeled by the one-dimensional wave equation with homogeneous Dirichlet boundary conditions. By expanding the initial shape into a Fourier sine series, we represent the solution as a superposition of normal modes, each oscillating with its own frequency. This classical model illustrates how standing waves and resonance arise from simple boundary conditions.",
+      "teaches": "Introduces separation of variables for the wave equation and uses Fourier sine series to encode initial conditions on a finite interval, highlighting normal modes and orthogonality. Emphasizes how boundary conditions select admissible spatial eigenfunctions and how initial data determine mode amplitudes.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Semi-Infinite String and the d\u2019Alembert Formula",
+      "summary": "An infinitely long or semi-infinite string is plucked or given an initial velocity over a bounded region while at rest elsewhere. The governing equation is again the one-dimensional wave equation, but now posed on the whole line or a half-line, and the behavior is dominated by traveling rather than standing waves. By deriving and applying the d\u2019Alembert formula, we express the solution in terms of translated copies of the initial displacement and velocity.",
+      "teaches": "Develops the explicit d\u2019Alembert solution and interprets it in terms of right- and left-moving waves and finite propagation speed. Connects initial value problems on unbounded domains to convolution-type representations and prepares for Fourier transform methods.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Method of Characteristics for First-Order Wave Transport",
+      "summary": "Before tackling second-order wave equations in full generality, we examine a linear first-order transport equation modeling the advection of a scalar quantity, such as temperature or pollutant concentration, in a flowing medium. The equation prescribes that the quantity is carried along straight characteristic lines at a fixed speed. Solving the problem reduces to tracking data along these characteristics from initial or boundary curves.",
+      "teaches": "Introduces the method of characteristics for first-order hyperbolic equations and clarifies the geometric idea of information traveling along characteristic curves. Lays the conceptual groundwork for understanding characteristics, domains of dependence, and propagation in higher-order hyperbolic PDEs.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Vibrating String with Damping and Forcing",
+      "summary": "A string is attached to a device that both exerts periodic forcing and introduces damping, for instance due to air resistance or internal friction. The resulting model is a wave equation with additional first-order time derivatives (damping) and inhomogeneous forcing terms. The long-time behavior exhibits a balance between energy input and dissipation, and steady-state oscillations can develop at specific driving frequencies.",
+      "teaches": "Combines the homogeneous wave equation with ODE-like damping and forcing, illustrating superposition, particular solutions, and the use of eigenfunction expansions for inhomogeneous problems. Connects to the theory of damped and driven oscillators and to resonance phenomena in PDE settings.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Two-Dimensional Membrane Vibrations",
+      "summary": "A thin, elastic membrane such as a drumhead is fixed along its boundary and set into motion by an initial displacement or impact. The vertical displacement satisfies the two-dimensional wave equation on a planar domain with suitable boundary conditions. Solving the problem involves separating variables in polar or Cartesian coordinates, leading to more intricate eigenvalue problems and mode shapes.",
+      "teaches": "Generalizes the one-dimensional wave equation methods to higher dimensions, emphasizing eigenvalue problems for the Laplacian under Dirichlet boundary conditions. Highlights the role of geometry in determining eigenfunctions and frequencies, and connects to Sturm\u2013Liouville theory and spectral methods.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

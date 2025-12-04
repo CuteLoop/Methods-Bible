@@ -1,0 +1,56 @@
+{
+  "section_title": "Elliptic PDEs: Method of Green Function",
+  "narrative": "This section develops the method of Green functions as a systematic way to solve boundary value problems for elliptic partial differential equations, with a particular focus on the Poisson and Laplace equations. A Green function encodes how the domain and its boundary respond to a point source, allowing us to build solutions for arbitrary forcing terms by superposition. In this way, what seems like a complicated differential equation turns into an integral representation that separates geometry, boundary conditions, and data.\n\nGreen functions are central in applied mathematics because they appear whenever steady states or equilibrium configurations are governed by linear elliptic operators: electrostatic potentials in conductors, steady heat distributions, incompressible fluid flows, and deflection of elastic membranes all admit Green function formulations. The method connects naturally to several other topics: it is closely related to fundamental solutions and convolution from ODEs and PDEs, to eigenfunction expansions and Fourier series on bounded domains, and to complex analysis through harmonic functions and the Poisson kernel. Understanding Green functions thus builds a bridge between geometric intuition about domains, analytic tools from functional analysis and spectral theory, and concrete computational techniques used throughout applied mathematics.",
+  "examples": [
+    {
+      "title": "Green Function for the One-Dimensional Poisson Equation on an Interval",
+      "summary": "We study the Poisson equation in one spatial dimension on a finite interval with homogeneous Dirichlet boundary conditions, which can represent, for example, the steady temperature along a thin insulated rod whose ends are held at zero temperature. By introducing a point source inside the interval, we construct the Green function as the response to this source that vanishes at the endpoints. Using this Green function, we then represent the solution for a general forcing term as an explicit integral.",
+      "teaches": "This example introduces the idea of a Green function as the inverse of a differential operator with boundary conditions, and shows how to build it by solving piecewise ODEs and matching conditions at the source point. It emphasizes continuity and jump conditions for derivatives and illustrates how the superposition principle leads from a point source to a general forcing term.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Electrostatic Potential in a Rectangular Box via Eigenfunction Expansion",
+      "summary": "We consider Laplace's equation in a rectangular domain, modeling the steady electrostatic potential in a box where the potential is fixed on the boundary. Instead of guessing the Green function directly, we expand it in terms of the eigenfunctions of the Laplacian that satisfy the same boundary conditions. This leads to a double Fourier sine series representation of the Green function and, consequently, of the solution for arbitrary charge distributions.",
+      "teaches": "This example shows how to construct Green functions using eigenfunction expansions and the spectral decomposition of the Laplacian. It connects the method of separation of variables and Fourier series to the Green function viewpoint, illustrating how geometry and boundary conditions are encoded in the eigenbasis.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Steady-State Heat in a Disk and the Poisson Kernel",
+      "summary": "We examine the steady-state temperature distribution in a circular disk, where the boundary temperature is prescribed and there may be internal sources. By exploiting radial symmetry and tools from complex analysis, we derive the Green function for the Laplacian in the disk and relate it to the Poisson kernel on the boundary. This yields an integral formula that reconstructs harmonic and Poisson solutions from boundary data.",
+      "teaches": "This example highlights the connection between Green functions, harmonic functions, and the Poisson kernel, and it demonstrates how symmetry and complex analytic ideas simplify the construction in special geometries. It reinforces the idea that Green functions capture how boundary data propagate into the interior of a domain.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Mixed and Robin Boundary Conditions for One-Dimensional Problems",
+      "summary": "We revisit the one-dimensional Poisson equation on an interval, but now impose a mix of boundary conditions, such as a fixed temperature at one end and Newton cooling (Robin condition) at the other. The presence of Robin and mixed conditions changes how the solution behaves near the boundary and alters the form of the Green function. By carefully incorporating these boundary conditions into the construction, we obtain a new integral representation for the solution.",
+      "teaches": "This example teaches how different boundary conditions modify the Green function and how to enforce them when solving for the response to a point source. It underscores the role of boundary conditions in the definition of the inverse operator and prepares the reader to handle more realistic physical models with mixed constraints.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Green Functions, Resolvents, and Eigenfunction Expansions",
+      "summary": "We interpret the Green function of a self-adjoint elliptic operator on a bounded domain as the kernel of its inverse, or resolvent, acting on square-integrable functions. By expanding in an orthonormal basis of eigenfunctions, we express the Green function as a series whose coefficients are reciprocals of the eigenvalues. This links the integral representation of solutions with the spectral properties of the operator.",
+      "teaches": "This example connects Green functions to operator theory, showing how they can be viewed as resolvent kernels and how their structure reflects the eigenvalues and eigenfunctions of the underlying operator. It deepens the conceptual understanding of why series and integral representations of solutions are two faces of the same idea.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "section_title": "Direct Methods for Solving Linear ODEs",
+  "narrative": "This section develops the core \"direct\" techniques for solving linear ordinary differential equations: methods that convert an equation and its data into an explicit formula for the solution. We focus on constant-coefficient equations and low-dimensional systems, where algebraic tools such as characteristic polynomials, eigenvalues, and particular-solution ans\u00e4tze are especially effective. Along the way, we connect the algebraic structure of a differential equation to the qualitative behavior of its solutions, such as exponential growth and decay, oscillations, and resonance.\n\nThese ideas are central throughout applied mathematics. Many basic models in mechanics, electrical circuits, population dynamics, and simple control systems reduce to linear ODEs that can be solved directly. In turn, the same solution forms reappear when separating variables in linear partial differential equations, for instance in the heat or wave equation, and when analyzing linearized stability of nonlinear dynamical systems. The characteristic-exponential viewpoint also links naturally to topics such as complex analysis, Fourier methods, and spectral theory, where exponentials and eigenfunctions play a unifying role.",
+  "examples": [
+    {
+      "title": "Linear First-Order Equation for Exponential Growth and Decay",
+      "summary": "A simple model for radioactive decay, or for population growth in an unlimited environment, leads to a first-order linear ordinary differential equation with a constant coefficient. The solution can be written explicitly in terms of an exponential function, and parameters such as half-life or doubling time arise directly from the equation. This example grounds the idea that linear equations produce exponential responses.",
+      "teaches": "Introduces the standard form of a first-order linear ODE, the integrating factor method, and the interpretation of exponential solutions in applications. Emphasizes how parameters in the equation control the growth rate and long-term behavior.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Forced Mass\u2013Spring System and Undetermined Coefficients",
+      "summary": "A mass attached to a spring and subject to an external periodic forcing satisfies a second-order linear ODE with constant coefficients. Forcing by sinusoidal, polynomial, or exponential functions leads to steady-state oscillations superimposed on transient behavior. In engineering and physics this model captures vibrations and resonance phenomena in a wide range of devices.",
+      "teaches": "Develops the method of undetermined coefficients to find particular solutions of inhomogeneous linear ODEs and combines it with the characteristic equation for the homogeneous part. Highlights the superposition principle and the distinction between transient and steady-state responses, including resonance when the forcing matches a natural frequency.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "RLC Electrical Circuit as a Second-Order Linear ODE",
+      "summary": "An electrical circuit consisting of a resistor, inductor, and capacitor in series obeys Kirchhoff\u2019s laws, leading to a second-order linear ODE for the charge or current. Depending on the circuit parameters, the system may be overdamped, critically damped, or underdamped, with qualitatively different transient responses. When driven by a voltage source, the circuit exhibits filtering behavior important in signal processing.",
+      "teaches": "Applies the characteristic equation and exponential solutions to classify damping regimes and interpret them physically. Reinforces the method of undetermined coefficients or variation of parameters for driven circuits and connects algebraic roots to observable time-domain behavior.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Coupled Linear Populations and 2\u00d72 Systems",
+      "summary": "Two interacting populations, such as predator and prey or two competing species, can be approximated near an equilibrium by a linear system of two first-order ODEs. Even without solving a nonlinear model, one can learn a great deal about stability and oscillations by studying the associated linear system. The solution can often be written in terms of matrix exponentials and eigenvalues.",
+      "teaches": "Introduces direct solution of small linear systems via eigenvalues and eigenvectors, and connects the algebraic classification of eigenvalues (real distinct, repeated, or complex) to phase portraits. Serves as a bridge between single-equation methods and the matrix-based viewpoint used in dynamical systems and numerical analysis.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Steady States from the Heat Equation as a Boundary-Value ODE",
+      "summary": "The steady temperature profile along a thin insulated rod satisfies a second-order linear ODE with boundary conditions at the ends. This equation arises by setting the time derivative in the heat equation to zero, reducing a PDE to an ODE boundary-value problem. The resulting linear problem captures how boundary data determine the interior state in conduction models.",
+      "teaches": "Uses direct solution of linear second-order ODEs with boundary conditions to illustrate how ODE techniques feed into PDE analysis. Emphasizes the role of linearity, superposition, and simple Green\u2019s-function-like constructions in solving boundary-value problems.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    }
+  ]
+}

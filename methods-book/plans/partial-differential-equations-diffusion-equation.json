@@ -1,0 +1,56 @@
+{
+  "section_title": "The Diffusion (Heat) Equation",
+  "narrative": "This section introduces the diffusion, or heat, equation as a central model for how quantities such as temperature, chemicals, or probability densities spread out in space over time. We begin with concrete physical and probabilistic pictures, such as heat flowing along a metal rod or dye dispersing in water, and progressively uncover the mathematical structure behind these phenomena. Along the way, we learn how local balancing laws, like conservation of energy or mass, naturally lead to partial differential equations that govern the evolution of entire systems.\n\nThe diffusion equation sits at an important crossroads in applied mathematics. It is simple enough to be solved explicitly in many settings, yet rich enough to exhibit phenomena such as smoothing, long-time equilibration, and sensitivity to geometry and boundary conditions. Its solutions can often be expressed in terms of Fourier series or Fourier transforms, so studying diffusion gives us an opportunity to practice separation of variables and spectral methods, and to see how tools from ordinary differential equations reappear in the analysis of partial differential equations.\n\nConceptually, this section connects to several major themes. The Gaussian function arises naturally as the fundamental solution of the diffusion equation, linking our study to probability theory and to complex analysis, where the same Gaussian integrals appear in contour methods. The long-time behavior of solutions can be understood using eigenvalues and eigenfunctions of associated spatial operators, tying diffusion to dynamical systems and linear algebra. By the end of the section, the reader will see how diffusion provides a model laboratory where techniques from Fourier analysis, linear ODE theory, and PDE theory all come together.",
+  "examples": [
+    {
+      "title": "Heat Flow in a Finite Rod with Fixed End Temperatures",
+      "summary": "Consider a thin metal rod of fixed length that is perfectly insulated along its sides but held at prescribed temperatures at its ends. We seek the temperature distribution along the rod as a function of time, given an initial temperature profile. By enforcing energy conservation on each small piece of the rod and using Fourier\u2019s law of heat conduction, we arrive at the diffusion equation with homogeneous or inhomogeneous boundary conditions.",
+      "teaches": "This example develops the diffusion equation from physical principles and introduces separation of variables with Fourier sine or cosine series to solve an initial\u2013boundary-value problem. It emphasizes how boundary conditions determine the appropriate eigenfunctions and how long-time behavior is governed by the lowest eigenmodes.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Infinite Line and the Gaussian Fundamental Solution",
+      "summary": "We study heat diffusion on an infinitely long, homogeneous rod, starting from a highly localized initial temperature, such as a point heat source or a sharply peaked bump. In this setting, symmetry and translation invariance suggest seeking solutions that depend only on the distance from the source and time. By solving the diffusion equation on the whole real line, we find that the fundamental solution has a Gaussian shape that broadens and flattens as time increases.",
+      "teaches": "This example introduces the concept of a fundamental solution and its representation using the Gaussian function. It highlights how convolution with the Gaussian solves the initial-value problem, connecting the diffusion equation to the Fourier transform and to the idea of smoothing of initial data.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Random Walks and the Diffusion Equation",
+      "summary": "Imagine a particle that performs a simple random walk on a one-dimensional lattice, taking equal-probability steps to the left or right at discrete times. As we refine the step size and time increment in a coordinated way, the probability distribution of the particle\u2019s position approaches a continuous density that evolves according to the diffusion equation. This limiting process illustrates how a deterministic PDE can emerge from an underlying random, discrete model.",
+      "teaches": "This example connects the diffusion equation with probability theory and stochastic processes, illuminating the interpretation of solutions as probability densities. It reinforces the scaling ideas that lead from discrete models to continuum limits and underscores why Gaussian profiles and diffusive scaling are ubiquitous.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Steady States and the Connection to Laplace\u2019s Equation",
+      "summary": "We consider a diffusion process that has run for a very long time in a bounded region, such as a rod or a rectangular plate, with boundary temperatures held fixed in time. As the transient behavior fades, the temperature distribution approaches a steady state that no longer changes in time. This limiting profile solves a purely spatial equation, obtained by setting the time derivative in the diffusion equation equal to zero.",
+      "teaches": "This example shows that the long-time limit of diffusion satisfies Laplace\u2019s equation, thereby linking parabolic and elliptic PDEs. It provides practice in solving boundary-value problems for Laplace\u2019s equation and deepens understanding of how eigenvalues, eigenfunctions, and boundary conditions control equilibration.",
+      "difficulty_variants": [
+        "easy",
+        "medium"
+      ]
+    },
+    {
+      "title": "Diffusion with Reaction or Decay",
+      "summary": "We examine a substance that both diffuses through a medium and undergoes a simple reaction, such as radioactive decay or a linear chemical loss term. The resulting model augments the diffusion equation with a reaction term that removes mass at a rate proportional to the current concentration. This modifies both the transient dynamics and the long-time behavior compared with pure diffusion.",
+      "teaches": "This example illustrates how to extend the diffusion equation to include sources and sinks, and how to adapt separation of variables or transform methods to such inhomogeneous problems. It highlights the role of eigenvalues shifted by reaction rates and connects diffusion to linear dynamical systems with damping.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

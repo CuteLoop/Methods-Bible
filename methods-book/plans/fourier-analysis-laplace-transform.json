@@ -1,0 +1,56 @@
+{
+  "section_title": "Laplace Transform",
+  "narrative": "This section develops the Laplace transform as a central tool for solving linear differential equations, especially those driven by external forcing and subject to initial conditions. The main idea is to convert problems in the time domain, typically expressed as ordinary differential equations or simple partial differential equations, into algebraic problems in a new variable, often called the complex frequency. Once in this transformed setting, the equations become easier to manipulate and solve, after which the inverse transform returns the solution to the original time variable.\n\nThe Laplace transform is especially valuable in applied mathematics because it handles discontinuous inputs, impulsive forces, and growing exponentials in a unified way. It provides a natural language for describing dynamical systems, electrical circuits, and control systems, and it shares many themes with Fourier analysis, such as convolution and spectral representation. Conceptually, it connects to complex analysis through analytic continuation and contour integration, and it complements Fourier transforms in the analysis of PDEs by focusing on initial-value problems and one-sided time evolution rather than periodic or infinite-time behavior.\n\nThroughout this section, we will build a toolkit that includes basic transform pairs, operational rules (such as shifting and differentiation), and systematic methods for partial fraction decomposition in the transform domain. Along the way, you will see how Laplace transforms streamline the solution of linear ODEs and simple PDEs, how they encode initial conditions directly into algebraic equations, and how they interact with convolution to describe input\u2013output relations in linear systems.",
+  "examples": [
+    {
+      "title": "Exponential Growth and Decay via Laplace Transform",
+      "summary": "This example revisits simple first-order linear ODEs, such as exponential growth and radioactive decay, but solves them entirely through the Laplace transform. The problem emphasizes writing down the transform of the unknown function, using initial conditions, and solving an algebraic equation for the Laplace transform before inverting it. The physical context can be population growth with a constant birth rate or a cooling process with proportional heat loss.",
+      "teaches": "It introduces the basic workflow of the Laplace transform method: transform the ODE, incorporate initial conditions algebraically, solve for the transform, and then invert using known transform tables. It also reinforces recognition of standard transform pairs and the idea of the one-sided transform starting at time zero.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Damped Harmonic Oscillator with Forcing",
+      "summary": "This example considers a mass\u2013spring\u2013damper system driven by an external forcing term, such as a sinusoidal input or a step function. The resulting second-order ODE includes both damping and forcing, and we use the Laplace transform to solve for the displacement as a function of time. By choosing different forms of the forcing, we can explore transient and steady-state behavior in a unified framework.",
+      "teaches": "It shows how Laplace transforms absorb initial conditions for higher-order ODEs and turn them into algebraic expressions involving the transform variable. It also illustrates how partial fraction decomposition and known inverse transforms can reveal the structure of the solution, including decaying transients and persistent oscillations.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Step and Impulse Responses of a Linear System",
+      "summary": "This example models a simple linear system, such as an RC or RLC electrical circuit, and asks for its response to a unit step function and to a Dirac delta impulse. In the time domain, these problems can be awkward due to discontinuities and distributions, but in the Laplace domain they become straightforward algebraic manipulations. The comparison of the two responses illustrates how the system processes sudden changes and instantaneous inputs.",
+      "teaches": "It emphasizes how the Laplace transform naturally handles discontinuous and impulsive inputs by transforming them into simple expressions. It introduces the notion of transfer functions and highlights the operational rule that differentiation and convolution in time become multiplication in the Laplace domain.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Convolution and the Laplace Transform",
+      "summary": "In this example we study the output of a linear time-invariant system when the input is a general function, modeled via convolution with an impulse response. Direct time-domain computation of the convolution integral is compared to an approach using Laplace transforms. By transforming, we convert the convolution integral into a product, making the analysis of the system\u2019s behavior much more transparent.",
+      "teaches": "It develops the convolution theorem for Laplace transforms and shows how it simplifies the study of input\u2013output relations in linear systems. It also reinforces the interpretation of the Laplace transform as a tool that trades complicated integral operations for simple algebraic multiplication.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Using Laplace Transforms for a Simple PDE: The Heat Equation on a Half-Line",
+      "summary": "This example applies the Laplace transform in time to the one-dimensional heat equation on a half-line with a given initial temperature distribution and boundary condition at the origin. Transforming in time reduces the PDE to an ordinary differential equation in space for each fixed Laplace parameter. Solving this spatial ODE and then inverting the transform yields the temperature distribution as a function of both position and time.",
+      "teaches": "It illustrates how Laplace transforms extend naturally from ODEs to certain PDEs, especially for initial-value problems on unbounded or semi-infinite domains. It also highlights the interplay between Laplace transforms in time and other methods, such as separation of variables or Fourier transforms in space.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

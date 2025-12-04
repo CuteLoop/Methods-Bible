@@ -1,0 +1,65 @@
+{
+  "section_title": "Boundary Value Problems: Fourier Method",
+  "narrative": "In this section we study boundary value problems for partial differential equations using the Fourier method, which is built on separation of variables and Fourier series. The central idea is to convert a partial differential equation with spatial boundary conditions into a family of ordinary differential equations in time (or another variable) whose solutions can be written as infinite sums of spatial eigenfunctions. These eigenfunctions, typically sines and cosines, arise from solving a related Sturm\u2013Liouville problem and form an orthogonal basis that allows us to expand the initial or boundary data.\n\nThis approach is fundamental in applied mathematics because many physical models, such as heat flow, wave propagation, and diffusion in confined regions, naturally lead to boundary value problems. The Fourier method provides explicit formulas for solutions, reveals how different spatial modes evolve, and connects directly to notions of stability and long-time behavior in dynamical systems. Mathematically, it illustrates how tools from ordinary differential equations, linear algebra, and real and complex Fourier analysis come together to solve partial differential equations and prepares the ground for more advanced topics such as transform methods, spectral theory, and numerical approximation of PDEs.",
+  "examples": [
+    {
+      "title": "Heat Equation on a Finite Rod with Fixed End Temperatures",
+      "summary": "A thin, homogeneous rod of finite length is thermally insulated along its sides, with its two ends held at fixed temperatures. The evolution of the temperature along the rod is governed by the one-dimensional heat equation with homogeneous Dirichlet boundary conditions. Given an initial temperature profile, we seek the temperature at later times.",
+      "teaches": "This example introduces separation of variables and the construction of a Fourier sine series to satisfy homogeneous Dirichlet boundary conditions. It emphasizes the idea of eigenvalues and eigenfunctions of the spatial operator and how to use them to represent the solution as a convergent series.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Heat Equation with Insulated Ends (Neumann Boundary Conditions)",
+      "summary": "Consider the same thin rod, but now its ends are perfectly insulated so that no heat flows in or out. The temperature still evolves according to the heat equation, but the boundary conditions now require the spatial derivative of the temperature to vanish at the endpoints. We again prescribe an initial temperature distribution and seek the subsequent temperature profile.",
+      "teaches": "This example shows how Neumann boundary conditions lead to a cosine eigenfunction expansion and how the presence of a constant steady state mode changes the long-time behavior. It also reinforces the role of orthogonality and normalization of eigenfunctions in constructing Fourier series solutions.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Vibrating String with Fixed Ends (Wave Equation)",
+      "summary": "A taut string of fixed length is stretched between two rigid supports and set into motion by a prescribed initial displacement and initial velocity. The small transverse vibrations of the string satisfy the one-dimensional wave equation with fixed-end boundary conditions. The goal is to determine how the shape of the string evolves in time.",
+      "teaches": "This example illustrates how separation of variables for the wave equation leads to a Fourier sine series in space together with oscillatory time dependence for each mode. It highlights the interpretation of eigenfunctions as normal modes and shows how initial displacement and velocity data determine the modal amplitudes.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Steady-State Temperature in a Rectangular Plate (Laplace\u2019s Equation)",
+      "summary": "A thin rectangular metal plate is held at specified temperatures along its edges, while the temperature is allowed to reach a steady state in the interior. In the steady regime, the temperature satisfies Laplace\u2019s equation on the rectangle with given boundary values on some or all sides. We aim to find the resulting equilibrium temperature distribution inside the plate.",
+      "teaches": "This example generalizes the Fourier method to two spatial dimensions and demonstrates separation of variables for Laplace\u2019s equation. It shows how mixed boundary data can still be expanded in appropriate sine or cosine series along one direction, with exponential behavior in the other, and how superposition constructs the full solution.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Heat Equation with Mixed (Robin) Boundary Conditions",
+      "summary": "A rod exchanges heat with its environment at the ends according to Newton\u2019s law of cooling, so that the heat flux at each end is proportional to the temperature difference between the rod and the surrounding medium. The resulting model is the one-dimensional heat equation with Robin (mixed) boundary conditions involving both the function and its spatial derivative. We prescribe an initial temperature distribution and study its subsequent evolution.",
+      "teaches": "This example introduces Robin boundary conditions and shows how they lead to a nontrivial Sturm\u2013Liouville eigenvalue problem with transcendental characteristic equations. It reinforces the generality of the Fourier method beyond pure Dirichlet or Neumann conditions and connects directly to Sturm\u2013Liouville theory.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Nonhomogeneous Forcing in a Heat Equation Boundary Value Problem",
+      "summary": "A rod is subject not only to diffusion of heat but also to a spatially varying internal heat source that may depend on time. The resulting equation is a nonhomogeneous heat equation with prescribed boundary conditions, for example of Dirichlet type. We want to determine the temperature distribution accounting for both diffusion and the internal heat generation.",
+      "teaches": "This example demonstrates how to combine the Fourier method with superposition to handle nonhomogeneous terms, using either expansion of the forcing in eigenfunctions or the method of eigenfunction expansions in time. It clarifies the role of particular solutions and shows how the eigenfunction framework extends to driven systems.",
+      "difficulty_variants": [
+        "medium",
+        "hard"
+      ]
+    }
+  ]
+}

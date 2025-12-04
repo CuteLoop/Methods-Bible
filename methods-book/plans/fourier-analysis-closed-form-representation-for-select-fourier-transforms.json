@@ -1,0 +1,56 @@
+{
+  "section_title": "Closed-Form Representation for Select Fourier Transforms",
+  "narrative": "This section develops a small but powerful toolbox of functions whose Fourier transforms can be written in closed form and manipulated reliably. Many applied problems in partial differential equations, signal processing, and dynamical systems reduce to computing or recognizing such transforms, especially when solving initial value problems, analyzing stability, or understanding how information propagates in space and time. By learning how to obtain and use these closed-form expressions, you will be able to solve model problems explicitly and to benchmark numerical and asymptotic methods.\n\nOur development emphasizes how Fourier analysis interacts with other parts of the mathematical toolkit. We show how to combine basic calculus techniques with ideas from ordinary differential equations, such as solving linear constant-coefficient equations in the frequency domain, and with tools from complex analysis, such as contour integration and residues, to compute transforms of rational functions. Along the way, we highlight structural features like symmetry, scaling, and convolution that allow you to generate new closed-form transforms from a few core examples. This perspective prepares you for later chapters, where these building blocks reappear inside Green\u2019s functions for PDEs, dispersion relations for wave equations, and spectral representations of linear operators.",
+  "examples": [
+    {
+      "title": "Fourier Transform of Exponential Decay",
+      "summary": "Consider a signal that decays exponentially in time, such as the transient response of a damped mechanical system or an RC circuit discharging from an initial voltage. We model this by the function that equals an exponential decay for positive time and vanishes for negative time. By computing its Fourier transform explicitly, we obtain a simple rational function in the frequency variable that captures both the rate of decay and the phase shift.",
+      "teaches": "This example teaches how to compute Fourier transforms using basic integration and how to interpret the result as the frequency response of a first-order linear system. It also introduces the connection between time-domain exponentials and simple poles in the complex frequency plane.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "The Gaussian and the Heat Kernel",
+      "summary": "The Gaussian function is central in probability, statistics, and heat diffusion. Physically, it represents the spread of heat from a point source in an infinite medium or the distribution of a Brownian particle after a fixed time. Its Fourier transform can be computed in closed form and turns out to be another Gaussian, with a precise reciprocal relationship between spatial width and frequency width.",
+      "teaches": "This example teaches how to evaluate the Fourier transform of a Gaussian using the method of completing the square, and it highlights the self-reproducing property of Gaussians under the Fourier transform. It also illustrates how this closed-form pair underlies the fundamental solution of the heat equation and the uncertainty principle.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Rational Functions and Residues",
+      "summary": "Many linear systems and PDE Green\u2019s functions give rise to Fourier transforms of rational functions, such as a Lorentzian profile or the transform of an exponentially decaying cosine. Direct integration is often awkward, but complex analysis provides a systematic way: extend the integrand to the complex plane and compute the integral using residues. The answer reveals how poles in the complex plane encode oscillations and decay in the original variable.",
+      "teaches": "This example teaches how to compute Fourier transforms of rational functions by contour integration and the residue theorem, including how to choose contours based on convergence and oscillatory factors. It clarifies the relationship between pole locations, exponential decay, and causality in time-dependent problems.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Piecewise and Even/Odd Functions via Symmetry",
+      "summary": "In applications it is common to meet piecewise-defined signals, such as a square pulse, a clipped sine wave, or a temperature profile with a sharp interface. Direct integration over each piece is possible but can be simplified greatly by exploiting evenness, oddness, and other symmetry properties. By rewriting Fourier integrals in terms of sine and cosine transforms, one can obtain compact closed-form formulas for many such examples.",
+      "teaches": "This example teaches how to use symmetry to reduce Fourier transform computations to sine and cosine integrals and how to handle piecewise functions systematically. It reinforces the link between parity of the function and the real and imaginary parts of its Fourier transform.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Fourier Transform and Green\u2019s Function for the One-Dimensional Heat Equation",
+      "summary": "The one-dimensional heat equation with an impulsive initial condition has a fundamental solution that describes how an initial point source of heat diffuses over time. By taking the Fourier transform in space, solving the resulting ordinary differential equation in time, and then inverting the transform, we obtain an explicit expression for the Green\u2019s function. This derivation connects the abstract transform pair for the Gaussian with a concrete PDE solution.",
+      "teaches": "This example teaches how to use the Fourier transform to convert a PDE into an ODE, solve in the frequency domain, and invert the transform to recover a spatial Green\u2019s function in closed form. It demonstrates how closed-form Fourier transform pairs function as building blocks for solving linear PDEs on unbounded domains.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

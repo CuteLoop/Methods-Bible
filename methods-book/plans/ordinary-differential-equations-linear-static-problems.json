@@ -1,0 +1,56 @@
+{
+  "section_title": "Linear Static Problems",
+  "narrative": "In this section we study linear static problems, that is, models in which all transient or time-dependent behaviors have settled and the system rests in equilibrium. Mathematically, these arise when we set time derivatives equal to zero in linear ordinary differential equations and obtain algebraic or reduced differential relations between the unknown quantities. The focus shifts from describing how solutions evolve to identifying which configurations can persist indefinitely under given forces, constraints, or inputs.\n\nLinear static problems matter throughout applied mathematics because many phenomena of interest are controlled not by how fast things change, but by how they ultimately balance. The temperature distribution in a thick wall that has been held at fixed boundary temperatures for a long time, the constant current levels in an electrical network under direct current (DC) forcing, and the deflection of a beam bolted at its ends and loaded by a static weight are all examples of linear static problems. These models are often the starting point for stability and bifurcation analysis in dynamical systems and for understanding the long-time behavior of solutions to time-dependent PDEs.\n\nConceptually, linear static problems form a bridge between linear ODE theory, linear algebra, and the boundary value problems that appear in partial differential equations. Setting derivatives to zero reduces many dynamical equations to systems of linear equations, which brings in matrix methods, eigenvalues, and the structure of solution spaces. At the same time, steady-state or equilibrium equations for PDEs, such as Laplace\u2019s or Poisson\u2019s equation, share the same themes of balance and superposition that we explore here. The tools developed in this section\u2014to identify, interpret, and compute equilibria\u2014will reappear when we solve time-dependent ODEs, use Fourier methods, and study harmonic and potential problems in higher dimensions.",
+  "examples": [
+    {
+      "title": "Static equilibrium of a mass\u2013spring system",
+      "summary": "A mass is attached to one or more linear springs and possibly a rigid support, and we are interested only in its resting position under an applied constant force such as gravity. By neglecting motion and damping, the governing equation reduces to a balance of spring forces and external loads. This leads to a linear algebraic equation relating the unknown displacement to the parameters of the springs and the applied force.",
+      "teaches": "This example illustrates how setting the acceleration equal to zero in Newton\u2019s law turns a second-order ODE into a simple linear static problem and how Hooke\u2019s law leads naturally to a linear equation or small linear system. It emphasizes interpreting the solution as an equilibrium configuration and provides a gentle introduction to superposition and stiffness matrices.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Direct-current equilibrium in a resistor network",
+      "summary": "A network of resistors is connected to a DC voltage source, and we seek the steady currents in each branch and steady voltages at each node. Kirchhoff\u2019s current and voltage laws express conservation of charge and energy, leading to linear relations among the unknown currents and node potentials. In the static (time-independent) regime, capacitors and inductors are either open or short circuits, further simplifying the model.",
+      "teaches": "This example shows how physical conservation laws produce linear equations whose solutions describe static equilibria, and how to systematically set up and solve node or mesh equations. It highlights the close analogy between resistor networks and other linear static systems, anticipating matrix formulations that are central in PDE discretizations.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Steady concentrations in a simple reaction network",
+      "summary": "A small system of chemical species undergoes linear reactions, such as decay and conversion, in a well-mixed reactor. The time-dependent equations for concentrations form a linear system of ODEs, and the steady states are obtained by setting all time derivatives equal to zero. The resulting algebraic system describes how reaction rates balance to maintain constant concentrations.",
+      "teaches": "This example connects linear ODE systems to their steady-state solutions and shows how equilibria arise as nullspaces of a coefficient matrix. It prepares for later discussions of stability by treating equilibria as key objects that organize the dynamics of the full time-dependent system.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Static temperature profile in a one-dimensional bar",
+      "summary": "A long, thin bar is insulated on its sides and held at fixed temperatures at its two ends. After a long time, the temperature no longer changes with time and satisfies a steady one-dimensional heat equation. In this static regime, the governing equation reduces from a parabolic PDE to an ordinary differential equation whose solution is a simple linear function of position.",
+      "teaches": "This example demonstrates how a time-dependent PDE yields, under steady-state assumptions, a lower-order ODE or even a purely algebraic problem. It shows how boundary conditions determine a unique static solution and previews methods for more general boundary value problems and Fourier-based solution techniques.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Static deflection of an elastic beam under uniform load",
+      "summary": "A slender beam is clamped or simply supported at its ends and subjected to a uniform transverse load, such as its own weight or an attached distribution of masses. In linear elasticity theory, the vertical deflection of the beam satisfies a fourth-order linear ODE obtained by balancing bending moments and shear forces. The static problem consists of solving this ODE with appropriate boundary conditions to find the beam\u2019s equilibrium shape.",
+      "teaches": "This example introduces higher-order linear static ODEs and shows how physical boundary conditions translate into mathematical constraints on the solution and its derivatives. It emphasizes superposition, the structure of the solution space, and the crucial role of boundary data in determining a unique equilibrium configuration.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "section_title": "Extreme-, Stationary-, and Saddle-Point Methods",
+  "narrative": "This section develops the complex-analytic tools used to extract asymptotic information from integrals with large parameters, especially those arising in Fourier analysis, special functions, and solutions of differential equations. The key idea is that, for highly oscillatory or exponentially weighted integrals, only neighborhoods of a few special points\u2014extrema, stationary points, and complex saddle points of the phase\u2014contribute significantly to the value of the integral. By locating and classifying these points, and then deforming contours in the complex plane to pass through them in favorable directions, we obtain accurate approximations that are often inaccessible to direct calculation. These methods play a central role in applied mathematics: they underlie the stationary phase method in Fourier analysis, the method of steepest descent for Laplace- and Fourier-type integrals, and many classical asymptotic formulas for special functions that solve ODEs and PDEs. In turn, these techniques connect back to contour integration, Cauchy\u2019s theorem, and analytic continuation, and forward to topics such as WKB analysis, dispersion in wave and Schr\u00f6dinger equations, and the long-time behavior of dynamical systems.",
+  "examples": [
+    {
+      "title": "A Simple Laplace-Type Integral with a Real Maximum",
+      "summary": "Consider an integral of the form \u222b\u2080\u00b9 e^{\u03bb f(x)} g(x) dx, where \u03bb is large and f has a unique nondegenerate maximum at an interior point. Physically, such integrals model contributions from a dominant region in space or time, for instance in statistical mechanics partition functions or in large-deviation estimates. The problem guides the reader to identify the maximum, expand f and g near that point, and justify that the rest of the interval contributes negligibly. The final approximation expresses the integral in terms of local Taylor coefficients of f and g at the maximum.",
+      "teaches": "Introduces Laplace\u2019s method on the real line and highlights the idea that a single extreme point can control the asymptotics of an entire integral. Emphasizes the link between Taylor expansion, Gaussian integrals, and leading-order asymptotic behavior.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Stationary Phase for a One-Dimensional Oscillatory Integral",
+      "summary": "We study an oscillatory integral of the form \u222b_{-\u221e}^{\u221e} e^{i\u03bb\u03c6(x)} a(x) dx with real phase \u03c6 and amplitude a that are smooth and rapidly decaying. The scenario corresponds to a highly oscillatory wave field, where \u03bb is a large frequency or wave number, and \u03c6 encodes travel time or optical path length. Students locate stationary points where \u03c6\u2032(x) = 0, expand \u03c6 and a near such points, and compare the contributions of stationary and nonstationary regions by estimating cancellations due to oscillation.",
+      "teaches": "Develops the stationary phase method on the real axis and shows how oscillations lead to decay unless the phase is stationary. Connects directly to Fourier transform asymptotics and the far-field behavior of wave solutions.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "First Steps in the Method of Steepest Descent",
+      "summary": "Here the integral has a complex phase, for example \u222b_\u0393 e^{\u03bb f(z)} g(z) dz, where f is analytic and \u0393 is a real contour embedded in the complex plane. Students locate saddle points of f (where f\u2032(z) = 0), sketch level curves of Re f(z), and then deform the contour to pass through a saddle along a path of steepest descent. Along this new contour the integrand decays rapidly away from the saddle, making a local quadratic approximation sufficient to determine the leading asymptotic term.",
+      "teaches": "Introduces the geometric viewpoint behind the saddle-point and steepest descent methods, linking contour deformation with the real and imaginary parts of an analytic phase. Emphasizes the classification of critical points of Re f and how this controls which saddles contribute to the asymptotics.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Asymptotics of a Special Function via Saddle Points",
+      "summary": "This example treats the large-parameter behavior of a classical special function given by an integral representation, such as the Bessel function J_\u03bd(\u03bb) written as a contour integral. By interpreting the phase in the exponent and the amplitude in the integrand, students identify relevant saddle points and determine which ones contribute in different parameter regimes. They then apply steepest descent to obtain a familiar asymptotic expansion, such as the oscillatory large-argument form of J_\u03bd.",
+      "teaches": "Demonstrates how saddle-point methods turn abstract integral representations into concrete asymptotic formulas for special functions that solve important ODEs. Reinforces the connection between complex contour deformation, critical points, and physically meaningful asymptotic regimes (e.g., oscillatory versus exponentially decaying behavior).",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Stationary Phase in a Dispersive PDE: Long-Time Behavior",
+      "summary": "We analyze the long-time behavior of the solution to a linear dispersive PDE, such as the one-dimensional Schr\u00f6dinger or Airy equation, expressed as a Fourier integral in space. For each fixed spatial point, the solution can be written as an oscillatory integral in frequency with a large time parameter t. Students identify the phase, locate its stationary points in the frequency variable, and apply stationary phase to derive decay rates in time and describe the spreading of wave packets.",
+      "teaches": "Illustrates how stationary phase enters the study of PDEs by turning integral solution formulas into explicit long-time asymptotics and decay estimates. Connects Fourier analysis, dispersion relations, and geometric optics ideas through concrete stationary-phase calculations.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

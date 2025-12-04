@@ -1,0 +1,57 @@
+{
+  "section_title": "From Differential to Algebraic Equations with Fourier and Laplace Transforms",
+  "narrative": "This section develops the central idea that Fourier transforms, Fourier series, and Laplace transforms convert differential equations into algebraic equations in transform space. By learning to move back and forth between the physical domain (time, space) and the transform domain (frequency, complex parameter), we turn derivatives into simple multipliers. This creates a powerful and systematic route for solving initial value problems, boundary value problems, and forced systems.\n\nThe methods here are essential in applied mathematics because many partial differential equations, such as the heat and wave equations, become tractable only after a suitable transform has diagonalized the differential operator. Dynamical systems and control problems are often most clearly understood through their frequency-domain or Laplace-domain representations, where stability and resonance can be read off from poles and spectra. The same ideas connect naturally to complex analysis through contour integration and the inversion formulas, and to linear algebra through the interpretation of transforms as changes of basis in infinite-dimensional function spaces.\n\nThroughout this section, we will proceed from simple ordinary differential equations to more elaborate partial differential equations, beginning with concrete, low-dimensional examples and gradually introducing the standard techniques: applying a transform, solving the resulting algebraic equation, and inverting the transform. Along the way we highlight the parallels between Fourier series, Fourier transforms, and Laplace transforms, and show how they provide complementary perspectives on the same underlying principle: derivatives become multiplication, and complicated operators become simple in the right representation.",
+  "examples": [
+    {
+      "title": "First-Order Linear ODE Solved by Laplace Transform",
+      "summary": "Consider a first-order linear ordinary differential equation describing, for example, the charging of a capacitor in an RC circuit with a given input voltage. The equation relates the unknown voltage across the capacitor to its time derivative and the input forcing. We apply the Laplace transform to turn the time derivative into an algebraic factor in the Laplace variable, solve for the transformed solution, and then invert.\n\nIn the process, we see how initial conditions appear naturally in the transformed equation as simple constants, and how partial fractions can be used to perform the inverse transform explicitly.",
+      "teaches": "Introduces the basic Laplace transform recipe: transform the ODE, use algebra to solve for the transform, and invert using tables and partial fractions. Emphasizes how initial conditions are encoded and why the Laplace transform is well suited for causal, time-dependent problems.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Heat Equation on a Finite Rod via Fourier Sine Series",
+      "summary": "We study the one-dimensional heat equation on a rod with its ends held at zero temperature. The governing PDE couples time derivatives and second spatial derivatives, with boundary conditions that the temperature vanishes at the endpoints. By expanding the solution in a Fourier sine series in space, we convert the PDE into a countable family of decoupled ODEs in time, one for each sine mode.\n\nSolving these ODEs and reassembling the series shows how spatial derivatives become scalar multipliers in the sine basis, and how initial data decompose into modes that decay at different exponential rates.",
+      "teaches": "Demonstrates separation of variables and Fourier sine series as a way to diagonalize the Laplacian with homogeneous Dirichlet boundary conditions, turning a PDE into independent algebraic relations for Fourier coefficients. Reinforces the interpretation of eigenfunctions and eigenvalues in the context of PDEs.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Heat Equation on the Whole Line via Fourier Transform",
+      "summary": "We now consider the heat equation on the entire real line, with a localized initial temperature distribution. Without physical boundaries, Fourier series are replaced by the Fourier transform, which decomposes the initial data into continuous frequency modes. Applying the spatial Fourier transform to the PDE converts the second spatial derivative into multiplication by minus the square of the frequency, yielding a simple first-order ODE in time for each frequency.\n\nSolving these ODEs and inverting the Fourier transform produces the classical Gaussian heat kernel representation of the solution, illustrating how convolution in space corresponds to multiplication in the frequency domain.",
+      "teaches": "Shows how the Fourier transform turns spatial derivatives into polynomial multipliers and converts a PDE on an unbounded domain into an algebraic evolution law in frequency space. Highlights the role of the transform pair and convolution theorem in constructing explicit solutions.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Damped Harmonic Oscillator and Resonance in the Laplace Domain",
+      "summary": "We analyze a second-order linear ODE modeling a mass\u2013spring\u2013damper system driven by an external periodic forcing. In the time domain, the equation involves second derivatives and competing effects of inertia, damping, and restoring forces. Applying the Laplace transform converts the differential equation into an algebraic equation in the Laplace variable, whose solution reveals poles corresponding to the system\u2019s natural frequencies and damping.\n\nBy examining these poles and performing an inverse transform, we identify transient and steady-state components, and we see how resonance emerges when the forcing frequency aligns with the system\u2019s natural behavior.",
+      "teaches": "Illustrates how the Laplace transform exposes the algebraic structure of linear dynamical systems and clarifies the roles of poles, damping, and forcing. Connects time-domain solutions with frequency-domain features and prepares for spectral perspectives in more complex systems.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Wave Equation on a String via Fourier Series",
+      "summary": "We consider the transverse vibrations of a string fixed at both ends, governed by the one-dimensional wave equation with appropriate boundary and initial conditions. Using separation of variables, we expand the solution in a Fourier sine series in space, since the endpoints are held fixed. The wave equation then splits into independent second-order ODEs in time for each mode, whose solutions are simple sines and cosines.\n\nThis analysis reveals how the frequencies of vibration are quantized by the boundary conditions and how the initial displacement and velocity determine the amplitudes of each standing wave mode.",
+      "teaches": "Emphasizes the conversion of a PDE into a discrete family of algebraic eigenvalue problems and time-dependent ODEs through Fourier series. Connects the spectral properties of the spatial operator with physically observable normal modes and standing waves.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    }
+  ]
+}

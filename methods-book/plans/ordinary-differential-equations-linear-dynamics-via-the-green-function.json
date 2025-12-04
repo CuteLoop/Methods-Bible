@@ -1,0 +1,56 @@
+{
+  "section_title": "Linear Dynamics via the Green Function",
+  "narrative": "This section introduces the Green function as a tool for understanding linear ordinary differential equations, especially those that model forced or driven systems. Instead of solving each new inhomogeneous equation from scratch, we learn to describe a system by its response to an idealized impulse and then build the response to general forcing by superposition and convolution. In doing so, we uncover a unifying viewpoint on linear dynamics: the Green function encodes how information propagates through the system over time or space.\n\nThe Green function perspective matters across applied mathematics because it generalizes naturally from simple ODE models to partial differential equations, where it appears as a fundamental solution or kernel. It connects directly with the Laplace transform, Fourier methods, and complex analysis, all of which can be used to construct or analyze Green functions. Throughout this section we will move back and forth between concrete physical models (such as mechanical oscillators and circuits) and abstract linear operators, preparing for later chapters on boundary value problems, Fourier series, and Green functions for PDEs.",
+  "examples": [
+    {
+      "title": "Impulse Response of a Damped Harmonic Oscillator",
+      "summary": "A mass attached to a spring and dashpot is pulled and then released, and later subjected to a brief, sharp external force idealized as a delta impulse. By solving the linear second-order ODE with this impulsive forcing, we obtain the system\u2019s Green function, which describes how any small impulse at time s affects the displacement at a later time t. Once this impulse response is known, we can represent the solution for general forcing as a time-convolution of the Green function with the input.",
+      "teaches": "This example introduces the Green function as the impulse response of a linear time-invariant second-order ODE and shows how solutions to forced problems are obtained via convolution. It emphasizes superposition and the link between physical intuition (knocking a system) and the abstract Green function.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Step Forcing in a First-Order Linear ODE",
+      "summary": "Consider a first-order linear ODE modeling, for example, a tank filling with fluid or a cooling process with an external heat source that switches on at a certain time. The forcing term is a step function, which can be approximated as an accumulation of infinitesimal impulses. By relating the known solution formula for first-order linear equations to the Green function, we reinterpret the standard integrating-factor method as constructing an integral against a kernel.",
+      "teaches": "This example connects the familiar integrating-factor technique with the Green function representation, showing that even simple first-order equations admit a natural kernel description. It develops comfort moving between classical solution formulas and the integral form using Green functions.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Driven RLC Circuit and Convolution with the Green Function",
+      "summary": "An RLC series circuit driven by a time-dependent voltage source is governed by a second-order linear ODE for the charge or current. We first find the Green function by solving the equation with an impulsive voltage input, and then convolve this Green function with a sinusoidal or piecewise-defined driving voltage. This shows how the circuit\u2019s transient and steady-state behavior are encoded in the same Green function.",
+      "teaches": "This example reinforces the interpretation of Green functions as impulse responses and demonstrates convolution in a concrete engineering context. It also prepares for frequency-domain methods by highlighting how different input waveforms are filtered by the same linear system.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Green Functions for a Two-Point Boundary Value Problem",
+      "summary": "We study a static deflection of a beam modeled by a second-order linear ODE with boundary conditions specified at both ends, such as a rod held fixed at two points and loaded by a distributed force. Instead of solving separately for each loading, we construct a Green function that satisfies the homogeneous equation away from a source point and the same boundary conditions at the ends. The solution for any load distribution is then obtained by integrating this Green function against the load.",
+      "teaches": "This example extends the Green function idea from initial value problems in time to boundary value problems in space. It highlights the role of continuity and jump conditions at the source point and shows how Green functions unify many individual solutions into a single kernel.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Preview: From ODE Green Functions to the Heat Equation Kernel",
+      "summary": "As a bridge to partial differential equations, we briefly examine the Green function (fundamental solution) of the one-dimensional heat equation on the whole line. By fixing the spatial variable and viewing the PDE as an ODE in time with a parameter, we relate the heat kernel to the temporal Green function discussed earlier. Although the technical details belong in a later chapter, this example shows how the same ideas of impulse response, superposition, and convolution reappear in diffusion problems.",
+      "teaches": "This example illustrates how Green functions for ODEs generalize to kernels for PDEs and foreshadows the role of Fourier transforms in constructing such kernels. It emphasizes conceptual continuity rather than detailed computation, reinforcing the unifying power of the Green function viewpoint.",
+      "difficulty_variants": [
+        "medium",
+        "extension"
+      ]
+    }
+  ]
+}

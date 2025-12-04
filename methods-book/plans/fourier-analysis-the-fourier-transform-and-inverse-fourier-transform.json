@@ -1,0 +1,56 @@
+{
+  "section_title": "The Fourier Transform and Inverse Fourier Transform",
+  "narrative": "In this section we introduce the Fourier transform, which decomposes functions on the real line into continuous superpositions of complex exponentials, and its inverse transform, which reconstructs the original function from its frequency components. We will develop both the formal integral formulas and the conditions under which they are valid, and we will explore how to move back and forth between the time (or spatial) domain and the frequency domain.\n\nThe Fourier transform is a central tool in applied mathematics: it turns differential equations into algebraic equations, converts convolutions into products, and offers a natural language for describing filtering, dispersion, and wave propagation. In the study of partial differential equations, especially on the whole real line or on \u211d^n, the Fourier transform becomes a primary method of solution for the heat, wave, and Schr\u00f6dinger equations. It also reveals deep connections among topics you may know already: it uses ideas from complex analysis (contour integration and decay at infinity), it generalizes the Fourier series expansion on intervals, and it provides a bridge between ordinary differential equations, signal processing, and modern distribution theory.\n\nOur approach will be incremental and example-driven. We begin with explicit transforms of simple functions, such as exponentials and Gaussians, and use these to motivate key properties like inversion, scaling, and modulation. We then apply the transform to solve specific ODEs and PDEs, paying attention to how the inverse transform is used to write the final solution in physical space. Along the way, we will see how the transform interacts with differentiation and convolution, and we will preview the role of generalized functions such as the Dirac delta in making these ideas precise.",
+  "examples": [
+    {
+      "title": "The Fourier Transform of the Gaussian and Its Own Inverse",
+      "summary": "We consider the classical Gaussian function and compute its Fourier transform directly from the defining integral. By completing the square in the exponent and carefully evaluating the resulting integral, we discover that the Gaussian is mapped to another Gaussian, up to explicit constants. This striking self-reproducing property of the Gaussian is then used to illustrate how the inverse Fourier transform works in practice.",
+      "teaches": "This example teaches how to compute a nontrivial Fourier transform explicitly, how to use complex exponentials and completing the square in the exponent, and how to verify the inversion formula in a concrete, important case.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Solving the Heat Equation on the Real Line via Fourier Transform",
+      "summary": "We solve the one-dimensional heat equation on the entire real line with prescribed initial temperature distribution. By applying the Fourier transform in the spatial variable, we convert the partial differential equation into a family of ordinary differential equations in time, each labeled by a frequency parameter. Solving these ODEs and then applying the inverse Fourier transform, we obtain the classical heat kernel representation of the solution.",
+      "teaches": "This example teaches how the Fourier transform converts derivatives into multiplication by frequency, how to solve linear PDEs on \u211d using this property, and how the inverse transform is used to reconstruct the physical solution from its frequency-space evolution.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Impulse-Forced ODE and the Role of the Inverse Transform",
+      "summary": "We consider a linear constant-coefficient ordinary differential equation forced by a Dirac delta impulse or a short pulse approximating it. The Fourier transform turns the differential equation into an algebraic equation in the frequency variable, which can be solved by simple division. We then use the inverse Fourier transform to obtain the time-domain response, interpreting the result as a Green's function or impulse response of the system.",
+      "teaches": "This example teaches how the Fourier transform handles distributions like the Dirac delta, how it simplifies forced linear ODEs, and how the inverse transform naturally yields Green's functions that can be used for general right-hand sides by convolution.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Convolution, Filtering, and the Convolution Theorem",
+      "summary": "We model a simple filtering operation in signal processing or heat flow, where an input signal is smoothed by convolution with a kernel. By computing the Fourier transforms of both the signal and the kernel, we see that the convolution in physical space becomes pointwise multiplication in frequency space. Using the inverse Fourier transform, we interpret how modifying the frequency content (for example, by attenuating high frequencies) corresponds to smoothing or blurring in the original domain.",
+      "teaches": "This example teaches the convolution theorem, shows how the Fourier and inverse Fourier transforms relate physical-space operations to frequency-space multipliers, and illustrates how filters are designed and understood in applied settings.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Fourier Transform of Derivatives and Regularity from Decay",
+      "summary": "We examine how the Fourier transform interacts with differentiation by starting from the definition and integrating by parts. We find that differentiation in the physical variable corresponds to multiplication by a polynomial in the frequency variable. Using the inverse transform, we then explore how decay of the transform at high frequencies is related to smoothness of the original function, and we connect this to solving higher-order PDEs.",
+      "teaches": "This example teaches the derivative-multiplication correspondence for the Fourier transform, how to justify it rigorously under appropriate conditions, and how to interpret inverse transforms in terms of regularity and decay properties of solutions to differential equations.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "section_title": "Residue Calculus",
+  "narrative": "This section introduces the residue calculus, a powerful method for evaluating contour integrals of complex-valued functions by looking only at their singularities. The central idea is that the behavior of a holomorphic function around isolated singular points can be summarized by a single complex number at each point, called the residue, and that contour integrals can then be computed as finite sums of these residues. We will develop systematic techniques to identify and compute residues for simple poles, higher-order poles, and removable or essential singularities.\n\nResidue calculus matters in applied mathematics because it converts many difficult real integrals into manageable complex-analytic problems, especially those involving oscillatory integrals, rational functions, and exponential factors. It underlies standard tools in signal processing and control theory such as inverse Laplace and Fourier transforms, appears in the solution formulas for linear ODEs via contour integral representations, and plays a key role in constructing Green\u2019s functions for elliptic and parabolic PDEs. Along the way, the techniques connect to partial fraction decompositions, asymptotic methods, and the spectral analysis of linear operators, giving a unifying viewpoint that links complex analysis to differential equations and dynamical systems.\n\nOur narrative will build residue calculus from carefully chosen examples: starting with small contours and simple poles, we learn to compute residues by hand and interpret the residue theorem as a bookkeeping device for integrals. We then move to classic integral evaluations on the real line, the inversion of Laplace transforms, and the summation of series by contour integration. Throughout, we emphasize standard contours, such as semicircles and keyholes, and show how the qualitative behavior of a function at infinity guides the choice of contour, reinforcing the geometric intuition behind the theory.",
+  "examples": [
+    {
+      "title": "First Encounters with Simple Poles",
+      "summary": "We study contour integrals of rational functions like 1/(z^2 + 1) around small circles enclosing one or both of the singularities at i and -i. By explicitly parameterizing the circle and by computing residues at the singularities, we compare the long way and the short way of evaluating the same integral. This reveals concretely how a local quantity at each pole controls the value of a global contour integral.\n\nWe also explore what happens when the contour is deformed, and why the integral remains unchanged as long as we do not cross any singularities. This gives a first glimpse of the topological nature of contour integrals in complex analysis.",
+      "teaches": "This example teaches how to compute residues at simple poles using limits, and how to apply the residue theorem to small, explicitly described contours. It also reinforces the idea that contour deformations that avoid singularities do not change the value of the integral.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Evaluating a Real Integral via a Semicircular Contour",
+      "summary": "We consider the real integral of a rational function, such as the integral from minus infinity to infinity of 1/(x^2 + 1), and reinterpret it as the real part of a complex contour integral. By choosing an upper or lower semicircular contour and estimating the integral over the large arc, we show that this arc contribution vanishes in the limit as the radius grows. The remaining contribution is then expressed in terms of residues of the integrand inside the contour.\n\nWe compare this method to standard calculus techniques and see how the complex-analytic approach generalizes more easily when the integrand includes exponential or oscillatory factors. This provides a template for many classical integrals that arise in Fourier analysis and probability theory.",
+      "teaches": "This example teaches how to convert improper real integrals into contour integrals on the complex plane and to select an appropriate semicircular contour. It emphasizes estimation on large arcs, the role of decay and growth at infinity, and the systematic use of residues to evaluate integrals over the real line.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Inverse Laplace Transform by Residues",
+      "summary": "We investigate the inverse Laplace transform of a rational function, such as the Laplace transform of a damped oscillator solution, and compute it using the Bromwich integral. By shifting the line of integration into the complex plane and closing the contour in a half-plane where the exponential factor decays, we convert the inverse transform into a sum of residues at the poles of the Laplace transform. Each pole contributes an exponential term in time, revealing the structure of the underlying solution.\n\nThe example illustrates how stability and decay rates in ODE models correspond to the location of poles in the complex plane. This builds a direct bridge between complex analysis and the qualitative theory of linear dynamical systems.",
+      "teaches": "This example teaches how to use residue calculus to evaluate inverse Laplace transforms, including the choice of contour and half-plane based on exponential decay. It highlights the connection between poles, exponentials in time, and the behavior of solutions to linear ODEs and simple PDE models.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Summing Series with Contour Integrals",
+      "summary": "We use residues to evaluate infinite sums such as the sum over all integers of 1/(n^2 + a^2) by constructing a meromorphic function whose residues encode the terms of the series. By integrating an appropriate function, often involving the cotangent or related periodic functions, over a large rectangle and taking limits, we extract the value of the series from the sum of residues inside the contour. This technique transforms a discrete problem about sums into a continuous problem about integrals.\n\nThis example shows how complex analysis can provide closed-form expressions for series that would be difficult to handle by purely real-variable methods. It also highlights the interplay between periodicity, poles at the integers, and contour geometry.",
+      "teaches": "This example teaches the method of using meromorphic functions with prescribed poles to represent series, and then applying the residue theorem on large contours to evaluate the sums. It emphasizes how to design the integrand so that the residues naturally reproduce the desired series terms.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Residues and Green\u2019s Functions for a Simple PDE",
+      "summary": "We examine the construction of a Green\u2019s function for a one-dimensional boundary value problem, such as the heat equation or Poisson\u2019s equation on the real line, using Fourier transform methods. After expressing the solution as an inverse transform integral over frequency, we reinterpret this integral as a contour integral in the complex plane. By locating the poles of the transformed resolvent and evaluating their residues, we obtain explicit formulas for the Green\u2019s function, revealing how spatial decay and oscillation are encoded in the singularities.\n\nThrough this example, we see how residue calculus provides a systematic way to invert transforms and understand the influence of sources and boundary conditions in PDE models. It connects the abstract spectral parameter to concrete spatial behavior of solutions.",
+      "teaches": "This example teaches how residues arise naturally when inverting Fourier or Laplace transforms in the context of Green\u2019s functions for linear PDEs. It demonstrates the practical use of contour closure and residue sums to extract physically meaningful solution formulas.",
+      "difficulty_variants": [
+        "medium",
+        "hard"
+      ]
+    }
+  ]
+}

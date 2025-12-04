@@ -1,0 +1,55 @@
+{
+  "section_title": "Case Study: Burgers\u2019 Equation",
+  "narrative": "This section uses Burgers\u2019 equation as a unifying case study to explore several core ideas in partial differential equations, including nonlinear advection, diffusion, shock formation, and the interplay between analytic and numerical methods. Burgers\u2019 equation is simple enough to be written on a single line, yet rich enough to display many of the qualitative behaviors encountered in fluid dynamics, traffic flow, and conservation laws, such as steepening waves, shock fronts, and smoothing by viscosity. By examining both the inviscid and viscous forms, we see how adding a small diffusive term changes the nature of solutions and resolves singularities.\n\nThe techniques we develop here connect to many other parts of applied mathematics. The inviscid equation highlights the method of characteristics and connects directly to ordinary differential equations and dynamical systems along characteristic curves. The viscous equation can be transformed into the heat equation via the Hopf\u2013Cole transform, which leads naturally to Fourier analysis, convolution with the heat kernel, and, in more advanced treatments, connections with complex analysis through integral representations. Throughout this section we emphasize how these tools, first encountered in simpler settings, come together in a coherent way around a single nonlinear PDE model.\n\nOur goal is to let you rediscover standard techniques through guided problems rather than only reading formal solutions. By starting from linear transport and diffusion equations and gradually adding nonlinearity and viscosity, you will see how methods are adapted and extended. This case study prepares you for more sophisticated conservation laws and nonlinear PDEs in fluid mechanics, as well as for numerical methods that must cope with sharp gradients and discontinuities.",
+  "examples": [
+    {
+      "title": "Warm-Up: Linear Transport and the Method of Characteristics",
+      "summary": "Before tackling Burgers\u2019 equation, we revisit the linear transport equation that describes the motion of a scalar quantity advected at constant speed. The problem walks through constructing characteristic curves, solving the associated ordinary differential equations, and interpreting the solution as simply translating the initial profile without change of shape. By comparing different initial profiles, such as a step, a bump, or an oscillatory function, we see how characteristics encode the motion in a geometric way.",
+      "teaches": "This example reinforces the method of characteristics as a bridge between first-order PDEs and ODEs, setting up the idea that solutions can be tracked along curves in the space\u2013time plane. It prepares the groundwork for understanding how nonlinearity in Burgers\u2019 equation changes the geometry of characteristics and leads to shock formation.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Inviscid Burgers\u2019 Equation and Shock Formation",
+      "summary": "Here we study the inviscid Burgers\u2019 equation, where the advecting velocity equals the solution itself, modeling nonlinear self-advection. Starting from smooth initial data, we follow characteristics and discover that they can intersect in finite time, which makes the classical solution multi-valued and signals the formation of a shock. The problem guides you through computing the shock time for simple initial profiles and interpreting the result physically as wave steepening and breaking.",
+      "teaches": "This example introduces nonlinear characteristics and the mechanism by which nonlinearity alone can produce singularities from smooth data. It teaches how to compute shock formation times and sets the stage for weak solutions and entropy conditions in conservation laws.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Viscous Burgers\u2019 Equation and the Hopf\u2013Cole Transform",
+      "summary": "We add a small viscosity term to obtain the viscous Burgers\u2019 equation and examine how diffusion competes with nonlinear steepening. The core of the problem is the Hopf\u2013Cole transform, which converts the nonlinear PDE into the linear heat equation by a logarithmic change of variables. Once transformed, the solution can be represented using the heat kernel or Fourier series, and then inverted to recover the original unknown. Through specific initial data, you compute explicit solutions and compare them to the inviscid case.",
+      "teaches": "This example shows how a nonlinear PDE can be linearized by a clever transform and then solved using the toolbox developed for the heat equation, including convolution and Fourier methods. It highlights the deep connection between Burgers\u2019 equation, diffusion, and linear analysis techniques that recur throughout PDE theory.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Traveling Wave and Shock Profile Solutions",
+      "summary": "We look for traveling wave solutions to the viscous Burgers\u2019 equation that move at constant speed and connect two different asymptotic states, mimicking a smoothed-out shock. By assuming a profile that depends only on a single moving coordinate, the PDE reduces to an ordinary differential equation that can be integrated explicitly. This leads to smooth sigmoidal profiles whose steepness depends on the viscosity and whose speed is determined by the Rankine\u2013Hugoniot condition.",
+      "teaches": "This example illustrates the reduction of a PDE to an ODE via a traveling wave ansatz and shows how viscous effects regularize discontinuities. It also connects to the broader theory of shock waves, phase boundaries, and front propagation in reaction\u2013diffusion and other nonlinear PDE models.",
+      "difficulty_variants": [
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Boundary-Value Problems and Numerical Exploration for Burgers\u2019 Equation",
+      "summary": "In this problem we impose boundary conditions, such as fixed inflow and outflow values, on a finite spatial interval for viscous Burgers\u2019 equation. You set up a simple finite difference or finite volume discretization and explore how numerical solutions evolve from given initial data, observing the development of sharp gradients that resemble shocks. By varying the viscosity and grid resolution, you see how discretization interacts with physical diffusion and where numerical artifacts may appear.",
+      "teaches": "This example emphasizes the formulation of initial\u2013boundary value problems and basic numerical schemes for nonlinear PDEs. It illustrates how analytic understanding of shocks and diffusion informs the design and interpretation of numerical simulations for applied models.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    }
+  ]
+}

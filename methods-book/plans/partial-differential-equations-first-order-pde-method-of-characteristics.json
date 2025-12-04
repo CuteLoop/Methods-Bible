@@ -1,0 +1,55 @@
+{
+  "section_title": "First-Order Partial Differential Equations and the Method of Characteristics",
+  "narrative": "This section introduces first-order partial differential equations and the method of characteristics, a geometric technique that converts certain PDEs into families of ordinary differential equations along special curves called characteristic curves. Instead of attacking the full PDE at once, we follow the flow of information along these curves, turning a complicated multivariable problem into simpler one-dimensional problems. This viewpoint is especially natural in models where something is transported or propagated with a given velocity, such as temperature in a moving fluid, cars in traffic flow, or waves with slowly varying shape.  The method of characteristics is central in applied mathematics because it links PDEs to dynamical systems: each characteristic is a trajectory determined by an ODE, and the PDE solution is reconstructed from this characteristic family. The same ideas reappear in Hamilton\u2013Jacobi theory and classical mechanics, in geometrical optics and the eikonal equation, and in conservation laws and shock formation, which in turn motivate weak solutions and distribution theory. Conceptually, the method of characteristics sits at a crossroads with other areas such as Fourier analysis (where first-order PDEs sometimes linearize or simplify), complex analysis (through analytic continuation along curves), and numerical analysis (through characteristic-based schemes used in fluid dynamics and advection-dominated problems).",
+  "examples": [
+    {
+      "title": "Linear Transport Equation with Constant Velocity",
+      "summary": "Consider a pollutant concentration being carried by a steady, one-dimensional flow with constant speed. The governing PDE states that the concentration is transported without change along the flow direction, starting from a prescribed initial profile. By tracking how each fluid particle carries its initial concentration, we can determine the concentration at all later times. This leads to explicit formulas that reveal how initial data is simply shifted in space over time.",
+      "teaches": "This example teaches the basic construction of characteristic curves for a linear first-order PDE with constant coefficients and shows how to reduce the PDE to an ODE along straight-line characteristics. It emphasizes reading off the characteristic directions from the PDE and using initial data to parameterize the solution.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Transport with Nonconstant Velocity Field",
+      "summary": "Here we study a one-dimensional transport equation in which the velocity depends on position, so that different parts of a profile move at different speeds. Physically, this might model a pollutant in a river where the flow is faster in some regions and slower in others. The characteristics are now curves with nonuniform slopes, reflecting the varying velocity field, and they may bunch together or spread apart.",
+      "teaches": "This example teaches how to solve the characteristic ODE when the coefficients depend on space, and how to use the resulting characteristic mapping to reconstruct the PDE solution. It also introduces the idea that deformation of characteristics can amplify or smooth features of the initial data.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Nonlinear Conservation Law and Traffic Flow",
+      "summary": "We model the density of cars along a road using a nonlinear conservation law in which the flux of cars depends on the density itself. At low densities cars move quickly, while at high densities the traffic slows down, leading to a nonlinear relationship between density and flow. The PDE then describes how traffic jams form and move along the road as time evolves.",
+      "teaches": "This example teaches how to apply the method of characteristics to a first-order nonlinear conservation law, where the characteristic speed depends on the unknown solution. It highlights how characteristics can converge to form shocks and sets the stage for discussing breakdown of classical solutions and the need for weak solutions.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Hamilton\u2013Jacobi Equation and Optimal Control",
+      "summary": "We explore a simple Hamilton\u2013Jacobi equation arising from a mechanical system or an optimal control problem, where the unknown function represents an action, cost, or value function. The PDE relates spatial derivatives of this function to a Hamiltonian describing the underlying dynamics. Characteristics in this setting coincide with the trajectories of the associated Hamiltonian system, linking PDE solutions to paths that optimize a certain quantity.",
+      "teaches": "This example teaches how to interpret characteristics as trajectories in phase space governed by Hamilton\u2019s equations and how to reconstruct a Hamilton\u2013Jacobi solution along those trajectories. It connects the method of characteristics with classical mechanics and control theory, showing that first-order PDEs can encode variational and optimality principles.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Eikonal Equation and Geometrical Optics",
+      "summary": "Consider wave propagation in a medium where the wave speed depends on position, such as light traveling through glass with varying refractive index. In the high-frequency, geometrical optics limit, the phase of the wave satisfies the eikonal equation, a nonlinear first-order PDE involving the gradient of the phase. The level sets of this phase function are wavefronts, and the characteristic curves correspond to rays along which energy travels.",
+      "teaches": "This example teaches how the method of characteristics can be used to solve a nonlinear first-order PDE of eikonal type by tracing rays in space. It emphasizes the geometric interpretation of characteristics as paths of propagation and illustrates connections to ray tracing, lens design, and more advanced wave phenomena.",
+      "difficulty_variants": [
+        "medium",
+        "hard"
+      ]
+    }
+  ]
+}

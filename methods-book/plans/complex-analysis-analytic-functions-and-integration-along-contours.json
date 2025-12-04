@@ -1,0 +1,56 @@
+{
+  "section_title": "Analytic Functions and Integration along Contours",
+  "narrative": "This section develops the idea that analytic functions in the complex plane are not only infinitely differentiable but are also tightly controlled by their integrals along curves, or contours. We will introduce contour integration, learn how to parametrize curves and compute integrals directly, and then uncover the remarkable consequences of analyticity such as Cauchy\u2019s integral formula and path independence of integrals in simply connected regions. These ideas turn complex integration from a formal analogue of real-variable line integrals into a powerful computational and conceptual tool.\n\nFrom the point of view of applied mathematics, contour integrals lie at the heart of many techniques used to solve ordinary and partial differential equations, to evaluate integrals that arise in Fourier and Laplace analysis, and to understand stability in dynamical systems. For example, the inversion of the Laplace transform, the representation of solutions to the heat and wave equations, and many classical asymptotic evaluations of oscillatory integrals all rely on deforming contours in the complex plane and exploiting analyticity. The connection between contour integrals and harmonic functions also ties this material to potential theory, fluid flow, and electrostatics.\n\nConceptually, this section forms a bridge between the local theory of complex differentiation and the global theory of complex integration and singularities. The fundamental theorems about analytic functions and contour integrals will later justify the residue calculus used to evaluate real integrals and to locate poles of transfer functions in control theory, as well as supporting the complex-analytic foundations of Fourier series and transforms. Our goal is to build intuition and technique through guided problems, gradually moving from direct parametrization of curves to more abstract arguments based on analyticity and contour deformation.",
+  "examples": [
+    {
+      "title": "Direct Computation of a Contour Integral on a Circle",
+      "summary": "Consider the integral of a simple analytic function such as z^2 or e^{iz} around the unit circle, parametrized by z(\u03b8) = e^{i\u03b8}. We set up the integral by substituting the parametrization, computing dz, and converting the complex integral into an integral with respect to \u03b8 on the real interval [0, 2\u03c0]. Working through these computations builds comfort with the mechanics of contour integration before invoking any deeper theorems.",
+      "teaches": "This example teaches how to parametrize a contour, compute dz, and evaluate a complex line integral directly from the definition, reinforcing the geometric and algebraic meaning of integrating along a curve in the complex plane.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Path Independence and Analytic Primitives",
+      "summary": "We investigate when the integral of a function like f(z) = 1/z or f(z) = 2z along different paths between the same two points yields the same value. By comparing integrals along straight segments and along circular arcs, we see that analytic functions with primitives (antiderivatives) have path-independent integrals, whereas functions with singularities inside the region can produce different values along different paths. This leads naturally to the notion of simply connected domains and the role of singularities.",
+      "teaches": "This example illustrates the relationship between analyticity, the existence of antiderivatives, and path independence of contour integrals, highlighting how singularities obstruct path independence and foreshadowing Cauchy\u2019s integral theorem.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Using Cauchy\u2019s Integral Formula to Evaluate Integrals",
+      "summary": "We take a function such as f(z) = z^3 or f(z) = e^{z} and evaluate integrals of the form \u222e_C f(z)/(z \u2212 z_0) dz and \u222e_C f(z)/(z \u2212 z_0)^2 dz for circles centered at z_0. Rather than parametrizing the contour explicitly, we apply Cauchy\u2019s integral formula and its derivative version to obtain the result in one line. Along the way, we explore how the integral depends only on the values of the function at the center, not on the detailed shape of the contour, as long as it encloses the point z_0.",
+      "teaches": "This example teaches how Cauchy\u2019s integral formula replaces explicit parametrization with a structural result about analytic functions, and shows how derivatives of analytic functions can be represented as contour integrals.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Estimating Contour Integrals with the ML Inequality",
+      "summary": "In many applied problems we need bounds rather than exact values, for example to justify interchanging limits and integrals or to control error terms in asymptotic expansions. We consider integrals such as \u222e_C e^{\u2212z^2} dz over large circles or rectangles and estimate their magnitude without computing them exactly. By bounding the maximum of |f(z)| on the contour and multiplying by the contour length, we see how analytic estimates control the size of integrals as contours are deformed or expanded.",
+      "teaches": "This example teaches the use of the ML inequality to bound contour integrals, a key technique for justifying contour deformations, proving vanishing integrals on large arcs, and supporting rigorous arguments in PDE and Fourier analysis.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Contour Deformation and a Real Integral with Oscillations",
+      "summary": "We examine an oscillatory real integral such as \u222b_{\u2212\u221e}^{\u221e} e^{\u2212x^2} cos(ax) dx or \u222b_{0}^{\u221e} e^{\u2212x} sin(bx)/x dx and recast it as the real part or imaginary part of an integral of an analytic function along the real axis. By lifting the problem into the complex plane, we choose a contour that includes the real axis together with an arc or a vertical segment, and then use analyticity and estimates to show that the additional pieces contribute negligibly or in a controlled way. This step-by-step deformation transforms a difficult real integral into a more manageable complex one whose value is determined by analytic structure.",
+      "teaches": "This example teaches how to embed real integrals into complex contour integrals, how to choose and deform contours strategically, and how analytic properties and integral estimates combine to evaluate or bound integrals arising in Fourier and Laplace analysis.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

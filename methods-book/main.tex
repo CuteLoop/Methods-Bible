@@ -1,0 +1,153 @@
+%========================================
+%  Classical Math Textbook Template
+%========================================
+\documentclass[12pt,oneside]{book}
+
+%----------------------------------------
+% Encoding, language, fonts
+%----------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+
+
+%----------------------------------------
+% Page layout
+%----------------------------------------
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  margin=1in
+}
+
+\usepackage{setspace}
+\onehalfspacing
+
+%----------------------------------------
+% Math packages
+%----------------------------------------
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate,1]{label=(\alph*)}
+\setlist[enumerate,2]{label=(\roman*)}
+
+
+\numberwithin{equation}{chapter}
+
+% Common shortcuts
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+
+%----------------------------------------
+% Theorem-like environments
+%----------------------------------------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Problems embedded in the text (worked examples)
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}[chapter]
+
+% Exercises at the end of sections, numbered by section
+\newtheorem{exercise}{Exercise}[section]
+
+% Classical "Solution." environment
+\newenvironment{solution}{%
+  \begin{proof}[Solution]%
+}{%
+  \end{proof}%
+}
+
+%----------------------------------------
+% Graphics, lists, hyperlinks
+%----------------------------------------
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+\usepackage{enumitem}
+\setlist{nosep}
+
+\usepackage[hidelinks]{hyperref}
+
+%----------------------------------------
+% Title info
+%----------------------------------------
+\title{%
+  \Huge Methods in Applied Mathematics\\[0.5em]
+  \Large A Personal Textbook and Problem Notebook
+}
+\author{Your Name}
+\date{\today}
+
+%========================================
+% Document
+%========================================
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\chapter*{Preface}
+
+This book is intended as both a classical textbook and a personal
+notebook for studying mathematical methods at the graduate level.
+It is organized in two complementary ways:
+
+\begin{itemize}
+  \item \emph{By topic}, following the core course outline
+        (complex analysis, Fourier analysis, differential equations).
+  \item \emph{By exam and problem}, which you can develop later
+        in separate chapters or appendices.
+\end{itemize}
+
+\mainmatter
+
+%========================================
+% Part I: Applied Analysis
+%========================================
+\part{Applied Analysis}
+
+\include{themes/complex_analysis}
+\include{themes/fourier_analysis}
+
+%========================================
+% Part II: Differential Equations
+%========================================
+\part{Differential Equations}
+
+\include{themes/ode}
+\include{themes/pde}
+
+%========================================
+% Back matter
+%========================================
+\backmatter
+
+\chapter*{Summary of Topics}
+
+Here you can keep a running list of topics, theorems, and page
+references for exam review, plus a mapping between exam problems
+and the thematic sections where they naturally belong.
+
+\end{document}

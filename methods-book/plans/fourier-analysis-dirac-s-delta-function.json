@@ -1,0 +1,57 @@
+{
+  "section_title": "Dirac's Delta-Function",
+  "narrative": "This section introduces Dirac\u2019s delta-function as a precise mathematical tool for representing idealized point sources, impulses, and localized measurements. Although the delta-function is not a function in the usual sense, it can be understood rigorously as a distribution, or generalized function, that acts on test functions by integration. We will explore several concrete ways to approximate it by honest functions and will use those approximations to justify its main algebraic and analytic properties.\n\nDirac\u2019s delta is indispensable in applied mathematics because it allows us to encode concentrated forces in ODE models, instantaneous inputs in dynamical systems, and point sources or sinks in PDEs such as the heat, wave, and Poisson equations. In the language of Fourier analysis, the delta provides a bridge between physical space and frequency space: it describes \u201cpure\u201d frequencies and exact localization, and it appears naturally when we study Green\u2019s functions and impulse responses. The techniques developed here connect directly to convolution, Fourier transforms, Green\u2019s functions for linear ODEs and PDEs, and, at a more advanced level, to complex analysis via contour integrals and to the theory of distributions used throughout modern analysis and partial differential equations.\n\nThroughout this section, we will build intuition by working with explicit approximating sequences (such as Gaussians and box functions), by computing how the delta interacts with smooth test functions, and by examining physical models where idealization by a point source is both natural and practically useful. The goal is that, by the end, you will be able to handle expressions involving \u03b4 confidently and correctly: using it in Fourier transforms, justifying manipulations with derivatives and integrals, and recognizing when and how it can be replaced by a limit of more familiar functions.",
+  "examples": [
+    {
+      "title": "Impulse Forcing of a Harmonic Oscillator",
+      "summary": "Consider a mass\u2013spring system modeled by a second-order linear ODE that experiences a single, instantaneous force at time t = 0. Physically, this represents striking the mass with a hammer, idealized as an infinitely short but finite-magnitude impulse. We model this forcing term using Dirac\u2019s delta to capture the energy input without tracking details of the very short time interval. Solving the ODE reveals the impulse response of the system, which plays a central role in linear systems theory.",
+      "teaches": "This example introduces \u03b4(t) as an idealized impulse in time and shows how to solve an ODE with delta forcing using continuity and jump conditions. It emphasizes how the integral properties of \u03b4 replace step-by-step time evolution over an extremely small interval.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Point Source in the Heat Equation",
+      "summary": "We study the one-dimensional heat equation with an initial condition concentrated at a single point, representing a unit amount of heat placed at x = 0 at time t = 0. The initial temperature distribution is modeled as \u03b4(x), which spreads out over time according to the diffusion process. The solution is the fundamental solution (or heat kernel), a Gaussian that broadens and flattens as time increases. This provides a concrete example of a delta-function evolving under a PDE.",
+      "teaches": "This example illustrates \u03b4(x) as an initial data for a PDE and connects it to fundamental solutions and Green\u2019s functions. It teaches how convolution with the heat kernel converts point sources into smooth solutions, reinforcing the role of \u03b4 as a building block for more general initial conditions.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Sampling Property and Fourier Transform of the Delta",
+      "summary": "We examine how the delta-function acts on smooth functions through integrals of the form \u222b f(x) \u03b4(x \u2212 a) dx. This leads to the \u201csampling property,\u201d which replaces the integral by the value f(a). We then compute the Fourier transform of \u03b4(x \u2212 a) and see that it becomes a pure modulation in frequency space, while the inverse transform of a constant function yields a delta in physical space. This example makes precise the idea that the delta-function is perfectly localized in one domain and perfectly delocalized in its transform domain.",
+      "teaches": "This example teaches the sampling property of \u03b4 and how to compute its Fourier transform and inverse transform carefully. It connects the delta-function to the duality of localization and frequency representation in Fourier analysis.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Approximating the Delta by Ordinary Functions",
+      "summary": "We construct several families of functions that approximate \u03b4(x) as a limit, such as narrow Gaussian bumps, tall and thin rectangles, and rescaled sinc functions. Each family has area one, becomes increasingly concentrated near the origin, and tends to zero away from the origin. By testing these approximations against smooth functions under the integral sign, we see in what sense they converge to the delta-function. Comparing different approximations highlights which properties are essential and which are model-dependent.",
+      "teaches": "This example develops the idea of \u03b4 as a limit of functions in the distributional sense, not pointwise. It teaches how to reason with weak limits using test functions and prepares the reader for generalized functions and distributions in PDE theory.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Heaviside Step Function and Distributional Derivatives",
+      "summary": "We introduce the Heaviside step function H(x), which jumps from 0 to 1 at x = 0, as a model of a sudden switching on of a system. In classical calculus, H is not differentiable at the jump, but in distribution theory we can define its derivative in a meaningful way. By integrating against smooth test functions and using integration by parts, we discover that the distributional derivative of H is exactly the delta-function at the origin. This provides a clean algebraic link between discontinuities and point masses.",
+      "teaches": "This example teaches how to compute derivatives in the sense of distributions and shows that dH/dx = \u03b4 in this generalized framework. It reinforces the interpretation of \u03b4 as the \u201cderivative\u201d of a jump and introduces the technique of integrating by parts against test functions.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}

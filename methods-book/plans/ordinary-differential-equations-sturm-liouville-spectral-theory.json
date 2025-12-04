@@ -1,0 +1,65 @@
+{
+  "section_title": "Sturm\u2013Liouville (Spectral) Theory",
+  "narrative": "This section develops Sturm\u2013Liouville theory, which studies a special class of second-order linear differential operators equipped with boundary conditions. These operators admit real eigenvalues and orthogonal eigenfunctions, much like symmetric matrices in linear algebra. The main goal is to understand how such operators arise from physical models, how to systematically find their eigenvalues and eigenfunctions, and how to use these eigenfunctions as building blocks to represent more complicated functions.\n\nSturm\u2013Liouville problems lie at the heart of separation of variables for partial differential equations such as the heat, wave, and Laplace equations. When you separate variables in a PDE, the spatial part almost always becomes a Sturm\u2013Liouville problem, and its spectrum determines the time evolution and qualitative behavior of solutions. This spectral viewpoint connects directly to Fourier series and Fourier transforms: orthogonal eigenfunctions generalize sines and cosines, and expansions in these eigenfunctions allow you to solve boundary value and initial value problems.\n\nConceptually, Sturm\u2013Liouville theory brings together ideas from ordinary differential equations, linear algebra, and functional analysis. It prepares the ground for modern spectral theory of operators, and it links to complex analysis through contour integral representations and analytic properties of eigenfunctions. In applied mathematics, mastering these tools is essential for modeling vibrating systems, diffusion, quantum mechanics, and for understanding how spatial structure shapes dynamical behavior.",
+  "examples": [
+    {
+      "title": "The vibrating string and the simplest Sturm\u2013Liouville problem",
+      "summary": "Consider a taut string of length L fixed at both ends, modeled by the one-dimensional wave equation with displacement zero at x = 0 and x = L. Separation of variables leads to a spatial eigenvalue problem in which the eigenfunctions are sine functions and the eigenvalues determine the natural frequencies of vibration. This example shows how a concrete physical system gives rise to a Sturm\u2013Liouville problem on a finite interval.",
+      "teaches": "Introduces the basic Sturm\u2013Liouville form with constant coefficients, Dirichlet boundary conditions, and explicitly computable eigenvalues and eigenfunctions, and shows how orthogonality leads to a Fourier sine series representation.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "extension"
+      ]
+    },
+    {
+      "title": "Heat flow in a rod and eigenfunction expansions",
+      "summary": "A homogeneous rod of length L with its ends held at zero temperature is modeled by the heat equation with homogeneous boundary conditions. Separation of variables produces the same spatial Sturm\u2013Liouville problem as the vibrating string, but now the eigenvalues appear in exponential decay factors rather than oscillations. Solutions with arbitrary initial temperature profiles are expressed as convergent series in the eigenfunctions.",
+      "teaches": "Emphasizes how the same Sturm\u2013Liouville spectrum underlies qualitatively different time behavior in PDEs, and practices using orthogonality to compute expansion coefficients and to reconstruct the solution as a series.",
+      "difficulty_variants": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Legendre\u2019s equation on an interval and nonconstant coefficients",
+      "summary": "The Legendre differential equation arises when solving Laplace\u2019s equation in spherical coordinates and restricting attention to axisymmetric potentials. On the interval [\u22121, 1] with appropriate boundary conditions, the Legendre polynomials emerge as eigenfunctions of a Sturm\u2013Liouville operator with variable coefficients and a nontrivial weight function. This example illustrates how orthogonal polynomials fit into the Sturm\u2013Liouville framework.",
+      "teaches": "Shows how to recognize a variable-coefficient second-order ODE as a Sturm\u2013Liouville problem, how the weight function enters the inner product, and how orthogonal polynomials arise as eigenfunctions with respect to that weighted inner product.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Bessel\u2019s equation and radial modes in a circular drum",
+      "summary": "The vibration of a circular drumhead leads, after separation of variables in polar coordinates, to Bessel\u2019s differential equation governing the radial part of the displacement. Imposing that the displacement vanishes on the boundary circle yields a Sturm\u2013Liouville problem whose eigenfunctions are Bessel functions evaluated at certain zeros. The discrete spectrum of eigenvalues corresponds to distinct normal modes of vibration.",
+      "teaches": "Develops comfort with Sturm\u2013Liouville problems on nonstandard domains and with singular endpoints, and illustrates how special functions (here Bessel functions) appear as eigenfunctions and support eigenfunction expansions analogous to Fourier series.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    },
+    {
+      "title": "Transforming a general second-order ODE into Sturm\u2013Liouville form",
+      "summary": "Many linear second-order ODE boundary value problems are not obviously self-adjoint but can be rewritten in Sturm\u2013Liouville form by multiplying by an integrating factor. This change reveals a hidden weight function and clarifies the role of boundary conditions in ensuring self-adjointness. Once in Sturm\u2013Liouville form, the problem inherits real eigenvalues and orthogonal eigenfunctions.",
+      "teaches": "Practices the algebraic technique of finding integrating factors to obtain Sturm\u2013Liouville form, and reinforces the connection between self-adjointness, real spectra, and orthogonality in the associated function space.",
+      "difficulty_variants": [
+        "medium",
+        "hard"
+      ]
+    },
+    {
+      "title": "Completeness and expanding functions in eigenfunction bases",
+      "summary": "Given a Sturm\u2013Liouville operator with a known sequence of eigenvalues and orthogonal eigenfunctions, one can ask whether every reasonable function on the interval can be expanded in a convergent series of these eigenfunctions. In physical terms, this means whether an arbitrary initial condition can be decomposed into normal modes. This example guides the student through using completeness in concrete settings to solve boundary value and initial value problems.",
+      "teaches": "Reinforces the idea of eigenfunctions as a basis for function spaces, connects Sturm\u2013Liouville theory to Fourier series and Fourier transforms, and highlights how completeness underpins solution formulas for linear PDEs.",
+      "difficulty_variants": [
+        "medium",
+        "hard",
+        "extension"
+      ]
+    }
+  ]
+}
